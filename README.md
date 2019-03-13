@@ -9,6 +9,8 @@ For Industrie 4.0, an asset is any "object which has a value for an organization
 
 Assets shall have a logical representation in the "information world", for example shall be managed by IT-systems. Thus, an asset has to be precisely identified as an entity, shall have a "specific state within its life (at least a type or instance)", shall have communication capabilities, shall be represented by means of information and shall be able to provide technical functionality. This logical representation of an asset is called Administration Shell. The combination of asset and Administration Shell forms the so-called I4.0 Component.
 
+You can look into metamodel using software like [UAModeler](https://www.unified-automation.com/products/development-tools/uamodeler.html) from Unified Automation GmbH. The xml file in models folder can be easily imported in every OPC UA SDK allowing information model xml file to be imported.
+
 ---
 
 The foundation of coreAAS is the AAS metamodel defined in [this](https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/2018-details-of-the-asset-administration-shell.html) document.
