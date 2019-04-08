@@ -17,6 +17,7 @@
         <Alias Alias="HasSubtype">i=45</Alias>
         <Alias Alias="HasProperty">i=46</Alias>
         <Alias Alias="HasComponent">i=47</Alias>
+        <Alias Alias="EnumValueType">i=7594</Alias>
         <Alias Alias="IdentifierType">ns=1;i=3002</Alias>
         <Alias Alias="Kind">ns=1;i=3003</Alias>
         <Alias Alias="Identifier">ns=1;i=3004</Alias>
@@ -24,6 +25,7 @@
         <Alias Alias="KeyType">ns=1;i=3006</Alias>
         <Alias Alias="Key">ns=1;i=3007</Alias>
         <Alias Alias="PropertyCategory">ns=1;i=3008</Alias>
+        <Alias Alias="PropertyValueType">ns=1;i=3009</Alias>
         <Alias Alias="HasAsset">ns=1;i=4002</Alias>
         <Alias Alias="HasConceptDescription">ns=1;i=4003</Alias>
         <Alias Alias="HasEmbeddedDataSpecification">ns=1;i=4004</Alias>
@@ -33,7 +35,7 @@
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="SmoA3DOkW+CoJVDI/lwWlg==" Version="1.6.2"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="UhVyOAomu8ia7gFPqAGaiQ==" Version="1.6.2"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
@@ -270,6 +272,997 @@
             </uax:ListOfLocalizedText>
         </Value>
     </UAVariable>
+    <UADataType NodeId="ns=1;i=3009" BrowseName="1:PropertyValueType">
+        <DisplayName>PropertyValueType</DisplayName>
+        <Description>An enumeration with all the XSD data type</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6063</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+        </References>
+        <Definition Name="1:PropertyValueType">
+            <Field Name="anyType" Value="0">
+                <Description>Mapped in BaseDataType</Description>
+            </Field>
+            <Field Name="AllComplexTypes" Value="1">
+                <Description>Mapped in Structure</Description>
+            </Field>
+            <Field Name="anySimpleType" Value="2">
+                <Description>Mapped in BaseDataType with information loss</Description>
+            </Field>
+            <Field Name="anyAtomicType" Value="3">
+                <Description>Mapped in BaseDataType with information loss</Description>
+            </Field>
+            <Field Name="anyURI" Value="4">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="Base64Binary" Value="5">
+                <Description>Mapped in ByteString</Description>
+            </Field>
+            <Field Name="boolean" Value="6">
+                <Description>Mapped in Boolean</Description>
+            </Field>
+            <Field Name="date" Value="7">
+                <Description>Mapped in DateTime with information loss</Description>
+            </Field>
+            <Field Name="dateTime" Value="8">
+                <Description>Mapped in DateTime</Description>
+            </Field>
+            <Field Name="dateTimeStamp" Value="9">
+                <Description>Mapped in DateTime with information loss</Description>
+            </Field>
+            <Field SymbolicName="Decimal" Name="decimal" Value="10">
+                <Description>Mapped in Decimal</Description>
+            </Field>
+            <Field Name="integer" Value="11">
+                <Description>Mapped in Integer</Description>
+            </Field>
+            <Field SymbolicName="Long" Name="long" Value="12">
+                <Description>Mapped in Int64</Description>
+            </Field>
+            <Field SymbolicName="Int" Name="int" Value="13">
+                <Description>Mapped in Int32</Description>
+            </Field>
+            <Field SymbolicName="Short" Name="short" Value="14">
+                <Description>Mapped in Int16</Description>
+            </Field>
+            <Field SymbolicName="Byte" Name="byte" Value="15">
+                <Description>Mapped in SByte</Description>
+            </Field>
+            <Field Name="nonNegativeInteger" Value="16">
+                <Description>Mapped in UInteger</Description>
+            </Field>
+            <Field Name="positiveInteger" Value="17">
+                <Description>Mapped in UInteger with information loss</Description>
+            </Field>
+            <Field Name="unsignedLong" Value="18">
+                <Description>Mapped in UInt64</Description>
+            </Field>
+            <Field Name="unsignedInt" Value="19">
+                <Description>Mapped in UInt32</Description>
+            </Field>
+            <Field Name="unsignedShort" Value="20">
+                <Description>Mapped in UInt16</Description>
+            </Field>
+            <Field Name="unsignedByte" Value="21">
+                <Description>Mapped in Byte</Description>
+            </Field>
+            <Field Name="nonPositiveInteger" Value="22">
+                <Description>Mapped in Integer with information loss</Description>
+            </Field>
+            <Field Name="negativeInteger" Value="23">
+                <Description>Mapped in Integer with information loss</Description>
+            </Field>
+            <Field SymbolicName="Double" Name="double" Value="24">
+                <Description>Mapped in Double</Description>
+            </Field>
+            <Field Name="duration" Value="25">
+                <Description>Mapped in DurationString</Description>
+            </Field>
+            <Field Name="dayTimeDuration" Value="26">
+                <Description>Mapped in DurationString with information loss</Description>
+            </Field>
+            <Field Name="yearMonthDuration" Value="27">
+                <Description>Mapped in yearMonthDuration with information loss</Description>
+            </Field>
+            <Field SymbolicName="Float" Name="float" Value="28">
+                <Description>Mapped in Float</Description>
+            </Field>
+            <Field Name="gDay" Value="29">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="gMonth" Value="30">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="gMonthDay" Value="31">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="gYear" Value="32">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="gYearMonth" Value="33">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="hexBinary" Value="34">
+                <Description>Mapped in ByteString with information loss</Description>
+            </Field>
+            <Field Name="NOTATION" Value="35">
+                <Description>Mapped in ByteString with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="QName" Value="36">
+                <Description>Mapped in ByteString with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field SymbolicName="String" Name="string" Value="37">
+                <Description>Mapped in String</Description>
+            </Field>
+            <Field Name="normalizedString" Value="38">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="token" Value="39">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="language" Value="40">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="Name" Value="41">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="NCName" Value="42">
+                <Description>Mapped in String with information loss</Description>
+            </Field>
+            <Field Name="ENTITY" Value="43">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="ID" Value="44">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="IDREF" Value="45">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="NMTOKEN" Value="46">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="time" Value="47">
+                <Description>Mapped in TimeString</Description>
+            </Field>
+            <Field Name="ENTITIES" Value="48">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="IDREFS" Value="49">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+            <Field Name="NMTOKENS" Value="50">
+                <Description>Mapped in String with information loss. This Data Type is not useful for any real use case</Description>
+            </Field>
+        </Definition>
+    </UADataType>
+    <UAVariable DataType="EnumValueType" ParentNodeId="ns=1;i=3009" ValueRank="1" NodeId="ns=1;i=6063" ArrayDimensions="51" BrowseName="EnumValues">
+        <DisplayName>EnumValues</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3009</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:ListOfExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>0</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>anyType</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in BaseDataType</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>1</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>AllComplexTypes</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Structure</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>2</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>anySimpleType</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in BaseDataType with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>3</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>anyAtomicType</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in BaseDataType with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>4</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>anyURI</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>5</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>Base64Binary</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>6</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>boolean</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Boolean</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>7</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>date</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in DateTime with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>8</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>dateTime</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in DateTime</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>9</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>dateTimeStamp</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in DateTime with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>10</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>decimal</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Decimal</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>11</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>integer</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Integer</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>12</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>long</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Int64</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>13</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>int</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Int32</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>14</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>short</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Int16</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>15</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>byte</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in SByte</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>16</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>nonNegativeInteger</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in UInteger</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>17</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>positiveInteger</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in UInteger with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>18</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>unsignedLong</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in UInt64</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>19</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>unsignedInt</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in UInt32</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>20</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>unsignedShort</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in UInt16</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>21</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>unsignedByte</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Byte</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>22</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>nonPositiveInteger</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Integer with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>23</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>negativeInteger</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Integer with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>24</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>double</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Double</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>25</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>duration</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in DurationString</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>26</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>dayTimeDuration</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in DurationString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>27</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>yearMonthDuration</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in yearMonthDuration with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>28</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>float</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in Float</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>29</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>gDay</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>30</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>gMonth</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>31</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>gMonthDay</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>32</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>gYear</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>33</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>gYearMonth</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>34</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>hexBinary</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>35</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>NOTATION</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>36</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>QName</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in ByteString with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>37</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>string</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>38</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>normalizedString</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>39</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>token</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>40</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>language</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>41</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>Name</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>42</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>NCName</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>43</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>ENTITY</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>44</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>ID</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>45</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>IDREF</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>46</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>NMTOKEN</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>47</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>time</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in TimeString</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>48</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>ENTITIES</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>49</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>IDREFS</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>50</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>NMTOKENS</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Mapped in String with information loss. This Data Type is not useful for any real use case</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+            </uax:ListOfExtensionObject>
+        </Value>
+    </UAVariable>
     <UADataType NodeId="ns=1;i=3004" BrowseName="1:Identifier">
         <DisplayName>Identifier</DisplayName>
         <Description>The Identifier DataType for the dientification of Identifiable entities of an Asset Administration Shell</Description>
@@ -431,8 +1424,60 @@
         GVsPC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDT
         05TVEFOVCIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJQQVJBT
         UVURVIiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVkFSSUFCT
-        EUiIFZhbHVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KPC9vcGM6VHlwZURpY3Rpb
-        25hcnk+Cg==</uax:ByteString>
+        EUiIFZhbHVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZ
+        FR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iUHJvcGVydHlWYWx1ZVR5cGUiPgogIDxvc
+        GM6RG9jdW1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiB3aXRoIGFsbCB0aGUgWFNEIGRhdGEgd
+        HlwZTwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
+        W55VHlwZSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJBbGxDb
+        21wbGV4VHlwZXMiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
+        W55U2ltcGxlVHlwZSIgVmFsdWU9IjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
+        SJhbnlBdG9taWNUeXBlIiBWYWx1ZT0iMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9ImFueVVSSSIgVmFsdWU9IjQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJCY
+        XNlNjRCaW5hcnkiIFZhbHVlPSI1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
+        m9vbGVhbiIgVmFsdWU9IjYiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJkYXRlI
+        iBWYWx1ZT0iNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lIiBWY
+        Wx1ZT0iOCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lU3RhbXAiI
+        FZhbHVlPSI5Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZGVjaW1hbCIgVmFsd
+        WU9IjEwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50ZWdlciIgVmFsdWU9I
+        jExIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibG9uZyIgVmFsdWU9IjEyIi8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50IiBWYWx1ZT0iMTMiLz4KICA8b3BjO
+        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJzaG9ydCIgVmFsdWU9IjE0Ii8+CiAgPG9wYzpFbnVtZ
+        XJhdGVkVmFsdWUgTmFtZT0iYnl0ZSIgVmFsdWU9IjE1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkV
+        mFsdWUgTmFtZT0ibm9uTmVnYXRpdmVJbnRlZ2VyIiBWYWx1ZT0iMTYiLz4KICA8b3BjOkVud
+        W1lcmF0ZWRWYWx1ZSBOYW1lPSJwb3NpdGl2ZUludGVnZXIiIFZhbHVlPSIxNyIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkTG9uZyIgVmFsdWU9IjE4Ii8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0idW5zaWduZWRJbnQiIFZhbHVlPSIxOSIvPgogI
+        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkU2hvcnQiIFZhbHVlPSIyMCIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkQnl0ZSIgVmFsdWU9IjIxI
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibm9uUG9zaXRpdmVJbnRlZ2VyIiBWY
+        Wx1ZT0iMjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJuZWdhdGl2ZUludGVnZ
+        XIiIFZhbHVlPSIyMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRvdWJsZSIgV
+        mFsdWU9IjI0Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZHVyYXRpb24iIFZhb
+        HVlPSIyNSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRheVRpbWVEdXJhdGlvb
+        iIgVmFsdWU9IjI2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ieWVhck1vbnRoR
+        HVyYXRpb24iIFZhbHVlPSIyNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImZsb
+        2F0IiBWYWx1ZT0iMjgiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnRGF5IiBWY
+        Wx1ZT0iMjkiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnTW9udGgiIFZhbHVlP
+        SIzMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdNb250aERheSIgVmFsdWU9I
+        jMxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZ1llYXIiIFZhbHVlPSIzMiIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdZZWFyTW9udGgiIFZhbHVlPSIzMyIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImhleEJpbmFyeSIgVmFsdWU9IjM0Ii8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk9UQVRJT04iIFZhbHVlPSIzNSIvPgogI
+        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlFOYW1lIiBWYWx1ZT0iMzYiLz4KICA8b3BjO
+        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJzdHJpbmciIFZhbHVlPSIzNyIvPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9Im5vcm1hbGl6ZWRTdHJpbmciIFZhbHVlPSIzOCIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InRva2VuIiBWYWx1ZT0iMzkiLz4KICA8b3BjOkVud
+        W1lcmF0ZWRWYWx1ZSBOYW1lPSJsYW5ndWFnZSIgVmFsdWU9IjQwIi8+CiAgPG9wYzpFbnVtZ
+        XJhdGVkVmFsdWUgTmFtZT0iTmFtZSIgVmFsdWU9IjQxIi8+CiAgPG9wYzpFbnVtZXJhdGVkV
+        mFsdWUgTmFtZT0iTkNOYW1lIiBWYWx1ZT0iNDIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
+        SBOYW1lPSJFTlRJVFkiIFZhbHVlPSI0MyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9IklEIiBWYWx1ZT0iNDQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJRFJFR
+        iIgVmFsdWU9IjQ1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTiIgV
+        mFsdWU9IjQ2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0idGltZSIgVmFsdWU9I
+        jQ3Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRU5USVRJRVMiIFZhbHVlPSI0O
+        CIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IklEUkVGUyIgVmFsdWU9IjQ5Ii8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTlMiIFZhbHVlPSI1MCIvPgogP
+        C9vcGM6RW51bWVyYXRlZFR5cGU+Cjwvb3BjOlR5cGVEaWN0aW9uYXJ5Pgo=</uax:ByteString>
         </Value>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=6002" NodeId="ns=1;i=6003" BrowseName="NamespaceUri">
@@ -540,36 +1585,87 @@
         3BlcnR5Q2F0ZWdvcnkiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwve
         HM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mUHJvcGVydHlDY
         XRlZ29yeSIgbmFtZT0iTGlzdE9mUHJvcGVydHlDYXRlZ29yeSIgbmlsbGFibGU9InRydWUiL
-        z4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJJZGVudGlmaWVyIj4KICA8eHM6YW5ub3RhdGlvb
-        j4KICAgPHhzOmRvY3VtZW50YXRpb24+VGhlIElkZW50aWZpZXIgRGF0YVR5cGUgZm9yIHRoZ
-        SBkaWVudGlmaWNhdGlvbiBvZiBJZGVudGlmaWFibGUgZW50aXRpZXMgb2YgYW4gQXNzZXQgQ
-        WRtaW5pc3RyYXRpb24gU2hlbGw8L3hzOmRvY3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0a
-        W9uPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY
-        2N1cnM9IjEiIHR5cGU9InhzOnN0cmluZyIgbmFtZT0iaWQiLz4KICAgPHhzOmVsZW1lbnQgb
-        WluT2NjdXJzPSIwIiBtYXhPY2N1cnM9IjEiIHR5cGU9InRuczpJZGVudGlmaWVyVHlwZSIgb
-        mFtZT0iaWRUeXBlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8e
-        HM6ZWxlbWVudCB0eXBlPSJ0bnM6SWRlbnRpZmllciIgbmFtZT0iSWRlbnRpZmllciIvPgogP
-        HhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZklkZW50aWZpZXIiPgogIDx4czpzZXF1ZW5jZ
-        T4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRlZCIgd
-        HlwZT0idG5zOklkZW50aWZpZXIiIG5hbWU9IklkZW50aWZpZXIiIG5pbGxhYmxlPSJ0cnVlI
-        i8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0e
-        XBlPSJ0bnM6TGlzdE9mSWRlbnRpZmllciIgbmFtZT0iTGlzdE9mSWRlbnRpZmllciIgbmlsb
-        GFibGU9InRydWUiLz4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJLZXkiPgogIDx4czphbm5vd
-        GF0aW9uPgogICA8eHM6ZG9jdW1lbnRhdGlvbj5BIERhdGFUeXBlIGZvciB0aGUga2V5cyBjb
-        250YWluZWQgaW4gYW4gQUFTUmVmZXJlbmNlVHlwZTwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L
-        3hzOmFubm90YXRpb24+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1c
-        nM9IjAiIG1heE9jY3Vycz0iMSIgdHlwZT0idG5zOktleVR5cGUiIG5hbWU9ImlkVHlwZSIvP
-        gogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0iMSIgdHlwZT0ieHM6Y
-        m9vbGVhbiIgbmFtZT0ibG9jYWwiLz4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtY
-        XhPY2N1cnM9IjEiIHR5cGU9InRuczpLZXlFbGVtZW50cyIgbmFtZT0idHlwZSIvPgogICA8e
-        HM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0iMSIgdHlwZT0ieHM6c3RyaW5nI
-        iBuYW1lPSJ2YWx1ZSIvPgogIDwveHM6c2VxdWVuY2U+CiA8L3hzOmNvbXBsZXhUeXBlPgogP
-        HhzOmVsZW1lbnQgdHlwZT0idG5zOktleSIgbmFtZT0iS2V5Ii8+CiA8eHM6Y29tcGxleFR5c
-        GUgbmFtZT0iTGlzdE9mS2V5Ij4KICA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZW50IG1pb
-        k9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuczpLZXkiIG5hbWU9I
-        ktleSIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlPgogPC94czpjb21wbGV4V
-        HlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZLZXkiIG5hbWU9Ikxpc3RPZktle
-        SIgbmlsbGFibGU9InRydWUiLz4KPC94czpzY2hlbWE+Cg==</uax:ByteString>
+        z4KIDx4czpzaW1wbGVUeXBlIG5hbWU9IlByb3BlcnR5VmFsdWVUeXBlIj4KICA8eHM6YW5ub
+        3RhdGlvbj4KICAgPHhzOmRvY3VtZW50YXRpb24+QW4gZW51bWVyYXRpb24gd2l0aCBhbGwgd
+        GhlIFhTRCBkYXRhIHR5cGU8L3hzOmRvY3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0aW9uP
+        gogIDx4czpyZXN0cmljdGlvbiBiYXNlPSJ4czpzdHJpbmciPgogICA8eHM6ZW51bWVyYXRpb
+        24gdmFsdWU9ImFueVR5cGVfMCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkFsbENvb
+        XBsZXhUeXBlc18xIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iYW55U2ltcGxlVHlwZ
+        V8yIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iYW55QXRvbWljVHlwZV8zIi8+CiAgI
+        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iYW55VVJJXzQiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJCYXNlNjRCaW5hcnlfNSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9ImJvb
+        2xlYW5fNiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9ImRhdGVfNyIvPgogICA8eHM6Z
+        W51bWVyYXRpb24gdmFsdWU9ImRhdGVUaW1lXzgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
+        HVlPSJkYXRlVGltZVN0YW1wXzkiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJkZWNpb
+        WFsXzEwIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iaW50ZWdlcl8xMSIvPgogICA8e
+        HM6ZW51bWVyYXRpb24gdmFsdWU9ImxvbmdfMTIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
+        HVlPSJpbnRfMTMiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJzaG9ydF8xNCIvPgogI
+        CA8eHM6ZW51bWVyYXRpb24gdmFsdWU9ImJ5dGVfMTUiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJub25OZWdhdGl2ZUludGVnZXJfMTYiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
+        HVlPSJwb3NpdGl2ZUludGVnZXJfMTciLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJ1b
+        nNpZ25lZExvbmdfMTgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJ1bnNpZ25lZElud
+        F8xOSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9InVuc2lnbmVkU2hvcnRfMjAiLz4KI
+        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJ1bnNpZ25lZEJ5dGVfMjEiLz4KICAgPHhzOmVud
+        W1lcmF0aW9uIHZhbHVlPSJub25Qb3NpdGl2ZUludGVnZXJfMjIiLz4KICAgPHhzOmVudW1lc
+        mF0aW9uIHZhbHVlPSJuZWdhdGl2ZUludGVnZXJfMjMiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJkb3VibGVfMjQiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJkdXJhdGlvb
+        l8yNSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9ImRheVRpbWVEdXJhdGlvbl8yNiIvP
+        gogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9InllYXJNb250aER1cmF0aW9uXzI3Ii8+CiAgI
+        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iZmxvYXRfMjgiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJnRGF5XzI5Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iZ01vbnRoXzMwI
+        i8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iZ01vbnRoRGF5XzMxIi8+CiAgIDx4czplb
+        nVtZXJhdGlvbiB2YWx1ZT0iZ1llYXJfMzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlP
+        SJnWWVhck1vbnRoXzMzIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iaGV4QmluYXJ5X
+        zM0Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iTk9UQVRJT05fMzUiLz4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJRTmFtZV8zNiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsd
+        WU9InN0cmluZ18zNyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9Im5vcm1hbGl6ZWRTd
+        HJpbmdfMzgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJ0b2tlbl8zOSIvPgogICA8e
+        HM6ZW51bWVyYXRpb24gdmFsdWU9Imxhbmd1YWdlXzQwIi8+CiAgIDx4czplbnVtZXJhdGlvb
+        iB2YWx1ZT0iTmFtZV80MSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9Ik5DTmFtZV80M
+        iIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkVOVElUWV80MyIvPgogICA8eHM6ZW51b
+        WVyYXRpb24gdmFsdWU9IklEXzQ0Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iSURSR
+        UZfNDUiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJOTVRPS0VOXzQ2Ii8+CiAgIDx4c
+        zplbnVtZXJhdGlvbiB2YWx1ZT0idGltZV80NyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsd
+        WU9IkVOVElUSUVTXzQ4Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iSURSRUZTXzQ5I
+        i8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iTk1UT0tFTlNfNTAiLz4KICA8L3hzOnJlc
+        3RyaWN0aW9uPgogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOlByb
+        3BlcnR5VmFsdWVUeXBlIiBuYW1lPSJQcm9wZXJ0eVZhbHVlVHlwZSIvPgogPHhzOmNvbXBsZ
+        XhUeXBlIG5hbWU9Ikxpc3RPZlByb3BlcnR5VmFsdWVUeXBlIj4KICA8eHM6c2VxdWVuY2U+C
+        iAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5c
+        GU9InRuczpQcm9wZXJ0eVZhbHVlVHlwZSIgbmFtZT0iUHJvcGVydHlWYWx1ZVR5cGUiIG5pb
+        GxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8e
+        HM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mUHJvcGVydHlWYWx1ZVR5cGUiIG5hbWU9Ikxpc
+        3RPZlByb3BlcnR5VmFsdWVUeXBlIiBuaWxsYWJsZT0idHJ1ZSIvPgogPHhzOmNvbXBsZXhUe
+        XBlIG5hbWU9IklkZW50aWZpZXIiPgogIDx4czphbm5vdGF0aW9uPgogICA8eHM6ZG9jdW1lb
+        nRhdGlvbj5UaGUgSWRlbnRpZmllciBEYXRhVHlwZSBmb3IgdGhlIGRpZW50aWZpY2F0aW9uI
+        G9mIElkZW50aWZpYWJsZSBlbnRpdGllcyBvZiBhbiBBc3NldCBBZG1pbmlzdHJhdGlvbiBTa
+        GVsbDwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzOnNlcXVlb
+        mNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0iMSIgdHlwZT0ie
+        HM6c3RyaW5nIiBuYW1lPSJpZCIvPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1he
+        E9jY3Vycz0iMSIgdHlwZT0idG5zOklkZW50aWZpZXJUeXBlIiBuYW1lPSJpZFR5cGUiLz4KI
+        CA8L3hzOnNlcXVlbmNlPgogPC94czpjb21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9I
+        nRuczpJZGVudGlmaWVyIiBuYW1lPSJJZGVudGlmaWVyIi8+CiA8eHM6Y29tcGxleFR5cGUgb
+        mFtZT0iTGlzdE9mSWRlbnRpZmllciI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVud
+        CBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6SWRlbnRpZ
+        mllciIgbmFtZT0iSWRlbnRpZmllciIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlb
+        mNlPgogPC94czpjb21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZJZ
+        GVudGlmaWVyIiBuYW1lPSJMaXN0T2ZJZGVudGlmaWVyIiBuaWxsYWJsZT0idHJ1ZSIvPgogP
+        HhzOmNvbXBsZXhUeXBlIG5hbWU9IktleSI+CiAgPHhzOmFubm90YXRpb24+CiAgIDx4czpkb
+        2N1bWVudGF0aW9uPkEgRGF0YVR5cGUgZm9yIHRoZSBrZXlzIGNvbnRhaW5lZCBpbiBhbiBBQ
+        VNSZWZlcmVuY2VUeXBlPC94czpkb2N1bWVudGF0aW9uPgogIDwveHM6YW5ub3RhdGlvbj4KI
+        CA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzP
+        SIxIiB0eXBlPSJ0bnM6S2V5VHlwZSIgbmFtZT0iaWRUeXBlIi8+CiAgIDx4czplbGVtZW50I
+        G1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSIxIiB0eXBlPSJ4czpib29sZWFuIiBuYW1lPSJsb
+        2NhbCIvPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0iMSIgdHlwZ
+        T0idG5zOktleUVsZW1lbnRzIiBuYW1lPSJ0eXBlIi8+CiAgIDx4czplbGVtZW50IG1pbk9jY
+        3Vycz0iMCIgbWF4T2NjdXJzPSIxIiB0eXBlPSJ4czpzdHJpbmciIG5hbWU9InZhbHVlIi8+C
+        iAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlP
+        SJ0bnM6S2V5IiBuYW1lPSJLZXkiLz4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZLZ
+        XkiPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY
+        2N1cnM9InVuYm91bmRlZCIgdHlwZT0idG5zOktleSIgbmFtZT0iS2V5IiBuaWxsYWJsZT0id
+        HJ1ZSIvPgogIDwveHM6c2VxdWVuY2U+CiA8L3hzOmNvbXBsZXhUeXBlPgogPHhzOmVsZW1lb
+        nQgdHlwZT0idG5zOkxpc3RPZktleSIgbmFtZT0iTGlzdE9mS2V5IiBuaWxsYWJsZT0idHJ1Z
+        SIvPgo8L3hzOnNjaGVtYT4K</uax:ByteString>
         </Value>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=6004" NodeId="ns=1;i=6005" BrowseName="NamespaceUri">
@@ -1428,7 +2524,7 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable ParentNodeId="ns=1;i=1012" NodeId="ns=1;i=6045" BrowseName="1:valueType" AccessLevel="3">
+    <UAVariable DataType="PropertyValueType" ParentNodeId="ns=1;i=1012" NodeId="ns=1;i=6045" BrowseName="1:valueType" AccessLevel="3">
         <DisplayName>valueType</DisplayName>
         <References>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
