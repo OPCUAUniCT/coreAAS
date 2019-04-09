@@ -26,16 +26,13 @@
         <Alias Alias="Key">ns=1;i=3007</Alias>
         <Alias Alias="PropertyCategory">ns=1;i=3008</Alias>
         <Alias Alias="PropertyValueType">ns=1;i=3009</Alias>
-        <Alias Alias="HasAsset">ns=1;i=4002</Alias>
         <Alias Alias="HasConceptDescription">ns=1;i=4003</Alias>
         <Alias Alias="HasEmbeddedDataSpecification">ns=1;i=4004</Alias>
-        <Alias Alias="IsDerivedFrom">ns=1;i=4005</Alias>
         <Alias Alias="IsCaseOf">ns=1;i=4006</Alias>
-        <Alias Alias="HasSemantic">ns=1;i=4007</Alias>
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="UhVyOAomu8ia7gFPqAGaiQ==" Version="1.6.2"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="6V+pUEZ9IU6QROKfEc9E0Q==" Version="1.6.2"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
@@ -1678,72 +1675,72 @@
             <uax:String>http://dieei.unict.it/coreAAS/Types.xsd</uax:String>
         </Value>
     </UAVariable>
-    <UAReferenceType NodeId="ns=1;i=4002" BrowseName="1:HasAsset">
-        <DisplayName>HasAsset</DisplayName>
-        <Description>The Asset Administration Shell references its Asset by means of this ReferenceType</Description>
-        <References>
-            <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
-        </References>
-    </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4003" BrowseName="1:HasConceptDescription">
         <DisplayName>HasConceptDescription</DisplayName>
         <Description>A ConceptDictionary aggregates ConceptDescriptions by means of this ReferenceType</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
         </References>
+        <InverseName Locale="en">ConceptDescriptionOf</InverseName>
     </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4004" BrowseName="1:HasEmbeddedDataSpecification">
         <DisplayName>HasEmbeddedDataSpecification</DisplayName>
-        <Description>Every Object with Data Specification references ts DataSPecification by means of this ReferenceType</Description>
+        <Description>Every Object with Data Specification references the DataSpecification by means of this ReferenceType</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
         </References>
-    </UAReferenceType>
-    <UAReferenceType NodeId="ns=1;i=4007" BrowseName="1:HasSemantic">
-        <DisplayName>HasSemantic</DisplayName>
-        <Description>Every HasSemantic entity should refer its own semantic definition by means of this ReferenceType.</Description>
-        <References>
-            <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
-        </References>
+        <InverseName Locale="en">EmbeddedDataSpecificationOf</InverseName>
     </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4006" BrowseName="1:IsCaseOf">
         <DisplayName>IsCaseOf</DisplayName>
-        <Description>Every ConceptDescription which is a copy of an external defined concepd definition should be referred by means of this ReferenceType.</Description>
+        <Description>Every ConceptDescription which is a copy of an external defined concept definition should be referred by means of this ReferenceType.</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
         </References>
     </UAReferenceType>
-    <UAReferenceType NodeId="ns=1;i=4005" BrowseName="1:IsDerivedFrom">
-        <DisplayName>IsDerivedFrom</DisplayName>
-        <Description>Every HasKind element should refer the relevant entity which the element was derived from (if it exists) by means of this ReferenceType</Description>
+    <UAReferenceType NodeId="ns=1;i=4002" BrowseName="1:HasAsset">
+        <DisplayName>HasAsset</DisplayName>
+        <Description>The Asset Administration Shell references its Asset by means of this ReferenceType</Description>
         <References>
-            <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=32</Reference>
         </References>
+        <InverseName Locale="en">AssetOf</InverseName>
     </UAReferenceType>
-    <UAReferenceType NodeId="ns=1;i=4008" BrowseName="1:HasLocalSemantic">
-        <DisplayName>HasLocalSemantic</DisplayName>
+    <UAReferenceType NodeId="ns=1;i=4008" BrowseName="1:HasSemantic">
+        <DisplayName>HasSemantic</DisplayName>
         <Description>An HasSemantic element which owns a ConceptDescription local to the AAS should refer this las by means of this ReferenceType</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=32</Reference>
         </References>
+        <InverseName Locale="en">SemanticOf</InverseName>
     </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4009" BrowseName="1:HasSubmodelSemantic">
         <DisplayName>HasSubmodelSemantic</DisplayName>
-        <Description>Every SubmodelElement whose semantic is defined by means of another SubmodelElement with "kind = type" should refer this last by means of this ReferenceType</Description>
+        <Description>Every Submodel or SubmodelElement whose semantic is defined by means of another Submodel or SubmodelElement with "kind = type" should refer this last by means of this ReferenceType</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=4008</Reference>
+        </References>
+        <InverseName Locale="en">SubmodelSemanticOf</InverseName>
+    </UAReferenceType>
+    <UAReferenceType NodeId="ns=1;i=4007" BrowseName="1:HasSubmodel">
+        <DisplayName>HasSubmodel</DisplayName>
+        <Description>An Asset Administration Shell references its local Submodels by means of this ReferenceType.</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=32</Reference>
         </References>
+        <InverseName>SubmodelOf</InverseName>
     </UAReferenceType>
-    <UAReferenceType NodeId="ns=1;i=4010" BrowseName="1:IsLocalCaseOf">
-        <DisplayName>IsLocalCaseOf</DisplayName>
-        <Description>Same semantic of IsCaseOf but used to target local Object in the AddressSpace</Description>
+    <UAReferenceType NodeId="ns=1;i=4005" BrowseName="1:HasAssetIdentificationModel">
+        <DisplayName>HasAssetIdentificationModel</DisplayName>
+        <Description>This ReferenceTzpe is used to connect an Asset to the SubmodelType instance regarding its identification</Description>
         <References>
-            <Reference ReferenceType="HasSubtype" IsForward="false">i=32</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=4007</Reference>
         </References>
+        <InverseName Locale="en">AssetIdentificationModelOf</InverseName>
     </UAReferenceType>
-    <UAReferenceType NodeId="ns=1;i=4011" BrowseName="1:IsLocalDerivedFrom">
-        <DisplayName>IsLocalDerivedFrom</DisplayName>
-        <Description>The same semantic as IsDerivedFrom but target local Object in the AddressSpace</Description>
+    <UAReferenceType NodeId="ns=1;i=4011" BrowseName="1:IsDerivedFrom">
+        <DisplayName>IsDerivedFrom</DisplayName>
+        <Description>Every HasKind element should refers the relevant entity which the element was derived from (if it exists) by means of this ReferenceType</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=32</Reference>
         </References>
@@ -1756,8 +1753,8 @@
             <Reference ReferenceType="HasProperty">ns=1;i=6018</Reference>
         </References>
     </UAObjectType>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=1004" ValueRank="1" NodeId="ns=1;i=6018" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=1004" ValueRank="1" NodeId="ns=1;i=6018" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1004</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -1768,43 +1765,18 @@
         <DisplayName>AASType</DisplayName>
         <Description>An ObjectType representing an AssetAdministrationShell</Description>
         <References>
-            <Reference ReferenceType="HasAsset">ns=1;i=5039</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5041</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5007</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5048</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5038</Reference>
-            <Reference ReferenceType="IsDerivedFrom">ns=1;i=5040</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5040</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6015</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6014</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5037</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5069</Reference>
         </References>
     </UAObjectType>
-    <UAObject SymbolicName="Asset" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5039" BrowseName="1:&lt;Asset>">
-        <DisplayName>&lt;Asset></DisplayName>
-        <References>
-            <Reference ReferenceType="HasAsset" IsForward="false">ns=1;i=1002</Reference>
-            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1014</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6058</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6059</Reference>
-            <Reference ReferenceType="HasModellingRule">i=11510</Reference>
-        </References>
-    </UAObject>
-    <UAVariable DataType="Identifier" ParentNodeId="ns=1;i=5039" NodeId="ns=1;i=6058" BrowseName="1:identification" AccessLevel="3">
-        <DisplayName>identification</DisplayName>
-        <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5039</Reference>
-            <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-        </References>
-    </UAVariable>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=5039" NodeId="ns=1;i=6059" BrowseName="1:idShort" AccessLevel="3">
-        <DisplayName>idShort</DisplayName>
-        <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5039</Reference>
-            <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-        </References>
-    </UAVariable>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5041" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -1832,8 +1804,8 @@
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5043" ValueRank="1" NodeId="ns=1;i=6061" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5043" ValueRank="1" NodeId="ns=1;i=6061" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5043</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -1848,32 +1820,87 @@
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
         </References>
     </UAObject>
+    <UAObject ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5048" BrowseName="1:asset">
+        <DisplayName>asset</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6064</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5048" ValueRank="1" NodeId="ns=1;i=6064" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5048</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObject ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5038" BrowseName="1:ConceptDictionaries">
         <DisplayName>ConceptDictionaries</DisplayName>
         <References>
+            <Reference ReferenceType="Organizes">ns=1;i=5050</Reference>
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
+    <UAObject SymbolicName="ConceptDictionary" ParentNodeId="ns=1;i=5038" NodeId="ns=1;i=5050" BrowseName="1:&lt;ConceptDictionary>">
+        <DisplayName>&lt;ConceptDictionary></DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5038</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5051</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1009</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5050" NodeId="ns=1;i=5051" BrowseName="1:ConceptDescriptions">
+        <DisplayName>ConceptDescriptions</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5062</Reference>
+            <Reference ReferenceType="Organizes">ns=1;i=5062</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5050</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="ConceptDescription" ParentNodeId="ns=1;i=5051" NodeId="ns=1;i=5062" BrowseName="1:&lt;ConceptDescription>">
+        <DisplayName>&lt;ConceptDescription></DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5051</Reference>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5051</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6083</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5062" ValueRank="1" NodeId="ns=1;i=6083" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5062</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObject ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5040" BrowseName="1:derivedFrom">
         <DisplayName>derivedFrom</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
-            <Reference ReferenceType="IsDerivedFrom" IsForward="false">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6060</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5040" ValueRank="1" NodeId="ns=1;i=6060" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5040" ValueRank="1" NodeId="ns=1;i=6060" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5040</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=6015" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1002" ValueRank="1" NodeId="ns=1;i=6015" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1002</Reference>
@@ -1892,11 +1919,64 @@
     <UAObject ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5037" BrowseName="1:Submodels">
         <DisplayName>Submodels</DisplayName>
         <References>
+            <Reference ReferenceType="Organizes">ns=1;i=5052</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
         </References>
     </UAObject>
+    <UAObject SymbolicName="SubmodelRef" ParentNodeId="ns=1;i=5037" NodeId="ns=1;i=5052" BrowseName="1:&lt;SubmodelRef>">
+        <DisplayName>&lt;SubmodelRef></DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5037</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6059</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5052" ValueRank="1" NodeId="ns=1;i=6059" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5052</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5069" BrowseName="1:Views">
+        <DisplayName>Views</DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes">ns=1;i=5070</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="View" ParentNodeId="ns=1;i=5069" NodeId="ns=1;i=5070" BrowseName="1:&lt;View>">
+        <DisplayName>&lt;View></DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5069</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5071</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6089</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1018</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5070" NodeId="ns=1;i=5071" BrowseName="1:ContainedElements">
+        <DisplayName>ContainedElements</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5070</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAVariable ParentNodeId="ns=1;i=5070" NodeId="ns=1;i=6089" BrowseName="1:idShort" AccessLevel="3">
+        <DisplayName>idShort</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5070</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1003" BrowseName="1:AdministrativeInformationType">
         <DisplayName>AdministrativeInformationType</DisplayName>
         <Description>An ObjectType containing administration information</Description>
@@ -1934,8 +2014,8 @@
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5021" ValueRank="1" NodeId="ns=1;i=6035" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5021" ValueRank="1" NodeId="ns=1;i=6035" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5021</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -1999,8 +2079,8 @@
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5036" ValueRank="1" NodeId="ns=1;i=6057" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5036" ValueRank="1" NodeId="ns=1;i=6057" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5036</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2024,15 +2104,15 @@
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5032" ValueRank="1" NodeId="ns=1;i=6056" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5032" ValueRank="1" NodeId="ns=1;i=6056" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5032</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=6055" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1014" ValueRank="1" NodeId="ns=1;i=6055" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1014</Reference>
@@ -2085,8 +2165,8 @@
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5013" ValueRank="1" NodeId="ns=1;i=6028" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5013" ValueRank="1" NodeId="ns=1;i=6028" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5013</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2120,8 +2200,8 @@
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5016" ValueRank="1" NodeId="ns=1;i=6029" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5016" ValueRank="1" NodeId="ns=1;i=6029" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5016</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2136,7 +2216,7 @@
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=6027" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1008" ValueRank="1" NodeId="ns=1;i=6027" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1008</Reference>
@@ -2156,40 +2236,58 @@
         <DisplayName>ConceptDictionaryType</DisplayName>
         <Description>An entity aggregating all the ConceptDescriptions related to an AAS</Description>
         <References>
-            <Reference ReferenceType="HasConceptDescription">ns=1;i=5018</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6031</Reference>
+            <Reference ReferenceType="HasConceptDescription">ns=1;i=5060</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5018</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6032</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6030</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5017</Reference>
         </References>
     </UAObjectType>
-    <UAObject SymbolicName="ConceptDescription" ParentNodeId="ns=1;i=1009" NodeId="ns=1;i=5018" BrowseName="1:&lt;ConceptDescription>">
+    <UAObject SymbolicName="ConceptDescription" ParentNodeId="ns=1;i=1009" NodeId="ns=1;i=5060" BrowseName="1:&lt;ConceptDescription>">
         <DisplayName>&lt;ConceptDescription></DisplayName>
         <References>
             <Reference ReferenceType="HasConceptDescription" IsForward="false">ns=1;i=1009</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1008</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6034</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6081</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Identifier" ParentNodeId="ns=1;i=5018" NodeId="ns=1;i=6034" BrowseName="1:identification" AccessLevel="3">
+    <UAVariable DataType="Identifier" ParentNodeId="ns=1;i=5060" NodeId="ns=1;i=6081" BrowseName="1:identification" AccessLevel="3">
         <DisplayName>identification</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5018</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5060</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="Enumeration" ParentNodeId="ns=1;i=1009" NodeId="ns=1;i=6031" BrowseName="1:category" AccessLevel="3">
-        <DisplayName>category</DisplayName>
+    <UAObject ParentNodeId="ns=1;i=1009" NodeId="ns=1;i=5018" BrowseName="1:ConceptDescriptions">
+        <DisplayName>ConceptDescriptions</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1009</Reference>
-            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="Organizes">ns=1;i=5061</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1009</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="ConceptDescription" ParentNodeId="ns=1;i=5018" NodeId="ns=1;i=5061" BrowseName="1:&lt;ConceptDescription>">
+        <DisplayName>&lt;ConceptDescription></DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5018</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6082</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5061" ValueRank="1" NodeId="ns=1;i=6082" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5061</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1009" NodeId="ns=1;i=6032" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1009" ValueRank="1" NodeId="ns=1;i=6032" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1009</Reference>
@@ -2214,8 +2312,8 @@
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1009</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5017" ValueRank="1" NodeId="ns=1;i=6033" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5017" ValueRank="1" NodeId="ns=1;i=6033" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5017</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2235,12 +2333,21 @@
         <References>
             <Reference ReferenceType="HasComponent">ns=1;i=5008</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6065</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6031</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6020</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6019</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6068</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6067</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6069</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6070</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6021</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6080</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6022</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6066</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5009</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6024</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6079</Reference>
         </References>
     </UAObjectType>
     <UAObject ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=5008" BrowseName="1:administration">
@@ -2250,7 +2357,23 @@
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1003</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6020" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6065" BrowseName="1:dataType" AccessLevel="3">
+        <DisplayName>dataType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6031" BrowseName="1:definition" AccessLevel="3">
+        <DisplayName>definition</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1006" ValueRank="1" NodeId="ns=1;i=6020" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
@@ -2270,12 +2393,44 @@
                 </uax:TypeId>
                 <uax:Body>
                     <Identifier xmlns="http://dieei.unict.it/coreAAS/Types.xsd">
-                        <id></id>
-                        <idType>IRDI_0</idType>
+                        <id>www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</id>
+                        <idType>URI_1</idType>
                     </Identifier>
                 </uax:Body>
             </uax:ExtensionObject>
         </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6068" BrowseName="1:identifier" AccessLevel="3">
+        <DisplayName>identifier</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6067" BrowseName="1:IECCategory" AccessLevel="3">
+        <DisplayName>IECCategory</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6069" BrowseName="1:IECLanguageCode" AccessLevel="3">
+        <DisplayName>IECLanguageCode</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6070" BrowseName="1:note" AccessLevel="3">
+        <DisplayName>note</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6021" BrowseName="1:preferredName" AccessLevel="3">
         <DisplayName>preferredName</DisplayName>
@@ -2285,10 +2440,26 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6080" BrowseName="1:revision" AccessLevel="3">
+        <DisplayName>revision</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+        </References>
+    </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6022" BrowseName="1:shortName" AccessLevel="3">
         <DisplayName>shortName</DisplayName>
         <References>
-            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6066" BrowseName="1:unit" AccessLevel="3">
+        <DisplayName>unit</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
         </References>
@@ -2302,8 +2473,8 @@
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1006</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5009" ValueRank="1" NodeId="ns=1;i=6023" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5009" ValueRank="1" NodeId="ns=1;i=6023" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5009</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2314,6 +2485,14 @@
         <DisplayName>valueFormat</DisplayName>
         <References>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6079" BrowseName="1:version" AccessLevel="3">
+        <DisplayName>version</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
         </References>
@@ -2344,8 +2523,8 @@
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5010" ValueRank="1" NodeId="ns=1;i=6025" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5010" ValueRank="1" NodeId="ns=1;i=6025" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5010</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2356,47 +2535,47 @@
         <DisplayName>SubmodelElementType</DisplayName>
         <Description>An abstract class for all submodel element of a Submodel</Description>
         <References>
-            <Reference ReferenceType="HasSemantic">ns=1;i=5024</Reference>
+            <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5053</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6037</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6038</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6036</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6039</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5022</Reference>
-            <Reference ReferenceType="HasSemantic">ns=1;i=5023</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5056</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
-    <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5024" BrowseName="1:&lt;EmbeddedDataSpecification>">
+    <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5053" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
-            <Reference ReferenceType="HasSemantic" IsForward="false">ns=1;i=1010</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=5025</Reference>
+            <Reference ReferenceType="HasEmbeddedDataSpecification" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5054</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1007</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=5026</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5055</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
         </References>
     </UAObject>
-    <UAObject ParentNodeId="ns=1;i=5024" NodeId="ns=1;i=5025" BrowseName="1:dataSpecificationContent">
+    <UAObject ParentNodeId="ns=1;i=5053" NodeId="ns=1;i=5054" BrowseName="1:dataSpecificationContent">
         <DisplayName>dataSpecificationContent</DisplayName>
         <References>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5024</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5053</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAObject ParentNodeId="ns=1;i=5024" NodeId="ns=1;i=5026" BrowseName="1:hasDataSpecification">
+    <UAObject ParentNodeId="ns=1;i=5053" NodeId="ns=1;i=5055" BrowseName="1:hasDataSpecification">
         <DisplayName>hasDataSpecification</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5024</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6042</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5053</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6071</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5026" ValueRank="1" NodeId="ns=1;i=6042" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5055" ValueRank="1" NodeId="ns=1;i=6071" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5026</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5055</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
@@ -2409,7 +2588,7 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=6038" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1010" ValueRank="1" NodeId="ns=1;i=6038" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1010</Reference>
@@ -2445,27 +2624,27 @@
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1010</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5022" ValueRank="1" NodeId="ns=1;i=6040" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5022" ValueRank="1" NodeId="ns=1;i=6040" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5022</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAObject ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5023" BrowseName="1:semanticId">
+    <UAObject ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5056" BrowseName="1:semanticId">
         <DisplayName>semanticId</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
-            <Reference ReferenceType="HasProperty">ns=1;i=6041</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6072</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
-            <Reference ReferenceType="HasSemantic" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1010</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5023" ValueRank="1" NodeId="ns=1;i=6041" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5056" ValueRank="1" NodeId="ns=1;i=6072" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5023</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5056</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
@@ -2477,6 +2656,60 @@
             <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
         </References>
     </UAObjectType>
+    <UAObjectType NodeId="ns=1;i=1017" BrowseName="1:FileType">
+        <DisplayName>FileType</DisplayName>
+        <Description>A File is a data element that represents a file via its path description.</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1011</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6078</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6077</Reference>
+        </References>
+    </UAObjectType>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1017" NodeId="ns=1;i=6078" BrowseName="1:mimeType" AccessLevel="3">
+        <DisplayName>mimeType</DisplayName>
+        <Description>Mime type of the content of the File.</Description>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1017</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1017" NodeId="ns=1;i=6077" BrowseName="1:value" AccessLevel="3">
+        <DisplayName>value</DisplayName>
+        <Description>Path and name of the referenced file
+(without file extension). The path can be absolute or relative.</Description>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1017</Reference>
+        </References>
+    </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1016" BrowseName="1:ReferenceElementType">
+        <DisplayName>ReferenceElementType</DisplayName>
+        <Description>A reference element is a data element that defines a reference to another element within the same or another
+AAS or a reference to an external object or entity.</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1011</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5059</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject ParentNodeId="ns=1;i=1016" NodeId="ns=1;i=5059" BrowseName="1:value">
+        <DisplayName>value</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6076</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1016</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5059" ValueRank="1" NodeId="ns=1;i=6076" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5059</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1012" BrowseName="1:SubmodelPropertyType">
         <DisplayName>SubmodelPropertyType</DisplayName>
         <Description>An ObjectType for all the Submodel Properties</Description>
@@ -2500,7 +2733,7 @@
         </Value>
     </UAVariable>
     <UAVariable ParentNodeId="ns=1;i=1012" NodeId="ns=1;i=6043" BrowseName="1:value" AccessLevel="3">
-        <DisplayName>value</DisplayName>
+        <DisplayName>Value</DisplayName>
         <References>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
@@ -2516,8 +2749,8 @@
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5027" ValueRank="1" NodeId="ns=1;i=6044" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5027" ValueRank="1" NodeId="ns=1;i=6044" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5027</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2532,6 +2765,58 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1015" BrowseName="1:SubmodelElementCollectionType">
+        <DisplayName>SubmodelElementCollectionType</DisplayName>
+        <Description>A submodel element collection is a collection of submodel elements.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6074</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6073</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5057</Reference>
+        </References>
+    </UAObjectType>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1015" NodeId="ns=1;i=6074" BrowseName="1:allowDuplicates" AccessLevel="3">
+        <DisplayName>allowDuplicates</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1015</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1015" NodeId="ns=1;i=6073" BrowseName="1:ordered" AccessLevel="3">
+        <DisplayName>ordered</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1015</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1015" NodeId="ns=1;i=5057" BrowseName="1:values">
+        <DisplayName>values</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5058</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1015</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="SubmodelElement" ParentNodeId="ns=1;i=5057" NodeId="ns=1;i=5058" BrowseName="1:&lt;SubmodelElement>">
+        <DisplayName>&lt;SubmodelElement></DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5057</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6075</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1010</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5058" NodeId="ns=1;i=6075" BrowseName="1:idShort" AccessLevel="3">
+        <DisplayName>idShort</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5058</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1013" BrowseName="1:SubmodelType">
         <DisplayName>SubmodelType</DisplayName>
         <References>
@@ -2541,7 +2826,8 @@
             <Reference ReferenceType="HasProperty">ns=1;i=6046</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6047</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6049</Reference>
-            <Reference ReferenceType="HasSemantic">ns=1;i=5030</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5039</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5030</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5029</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
@@ -2555,8 +2841,8 @@
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5031" ValueRank="1" NodeId="ns=1;i=6051" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5031" ValueRank="1" NodeId="ns=1;i=6051" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5031</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2571,7 +2857,7 @@
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=6048" BrowseName="1:description" AccessLevel="3">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1013" ValueRank="1" NodeId="ns=1;i=6048" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1013</Reference>
@@ -2603,17 +2889,34 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5039" BrowseName="1:parent">
+        <DisplayName>parent</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6058</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1013</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5039" ValueRank="1" NodeId="ns=1;i=6058" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5039</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObject ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5030" BrowseName="1:semanticId">
         <DisplayName>semanticId</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6050</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
-            <Reference ReferenceType="HasSemantic" IsForward="false">ns=1;i=1013</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1013</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5030" ValueRank="1" NodeId="ns=1;i=6050" ArrayDimensions="0" BrowseName="1:key" AccessLevel="3">
-        <DisplayName>key</DisplayName>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5030" ValueRank="1" NodeId="ns=1;i=6050" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5030</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
@@ -2623,11 +2926,135 @@
     <UAObject ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5029" BrowseName="1:SubmodelElements">
         <DisplayName>SubmodelElements</DisplayName>
         <References>
+            <Reference ReferenceType="Organizes">ns=1;i=5049</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1013</Reference>
         </References>
     </UAObject>
+    <UAObject SymbolicName="SubmodelElement" ParentNodeId="ns=1;i=5029" NodeId="ns=1;i=5049" BrowseName="1:&lt;SubmodelElement>">
+        <DisplayName>&lt;SubmodelElement></DisplayName>
+        <References>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=1;i=5029</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6034</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1010</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5049" NodeId="ns=1;i=6034" BrowseName="1:idShort" AccessLevel="3">
+        <DisplayName>idShort</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5049</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1018" BrowseName="1:ViewType">
+        <DisplayName>ViewType</DisplayName>
+        <Description>A view is a collection of referable elements w.r.t. a specific viewpoint of one or more stakeholders.</Description>
+        <References>
+            <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5063</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5068</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6088</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6087</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5067</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5066</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5063" BrowseName="1:&lt;EmbeddedDataSpecification>">
+        <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasEmbeddedDataSpecification" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5064</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1007</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5065</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5063" NodeId="ns=1;i=5064" BrowseName="1:dataSpecificationContent">
+        <DisplayName>dataSpecificationContent</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5063</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5063" NodeId="ns=1;i=5065" BrowseName="1:hasDataSpecification">
+        <DisplayName>hasDataSpecification</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5063</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6084</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5065" ValueRank="1" NodeId="ns=1;i=6084" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5065</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5068" BrowseName="1:ContainedElements">
+        <DisplayName>ContainedElements</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1018" ValueRank="1" NodeId="ns=1;i=6088" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
+        <DisplayName>description</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=6087" BrowseName="1:idShort" AccessLevel="3">
+        <DisplayName>idShort</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5067" BrowseName="1:parent">
+        <DisplayName>parent</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6086</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1018</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5067" ValueRank="1" NodeId="ns=1;i=6086" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5067</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5066" BrowseName="1:semanticId">
+        <DisplayName>semanticId</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6085</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1018</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5066" ValueRank="1" NodeId="ns=1;i=6085" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5066</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObject NodeId="ns=1;i=5044" BrowseName="1:AssetAdministrationShells">
         <DisplayName>AssetAdministrationShells</DisplayName>
         <References>
@@ -2702,4 +3129,54 @@
             <Reference ReferenceType="HasEncoding" IsForward="false">ns=1;i=3007</Reference>
         </References>
     </UAObject>
+    <UAObject ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5023" BrowseName="1:semanticId">
+        <DisplayName>semanticId</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6041</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5024" BrowseName="1:&lt;EmbeddedDataSpecification>">
+        <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5025</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1007</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5026</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5024" NodeId="ns=1;i=5025" BrowseName="1:dataSpecificationContent">
+        <DisplayName>dataSpecificationContent</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5024</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=5024" NodeId="ns=1;i=5026" BrowseName="1:hasDataSpecification">
+        <DisplayName>hasDataSpecification</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5024</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6042</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5023" ValueRank="1" NodeId="ns=1;i=6041" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5023</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5026" ValueRank="1" NodeId="ns=1;i=6042" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5026</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
 </UANodeSet>
