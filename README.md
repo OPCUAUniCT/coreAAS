@@ -1,4 +1,4 @@
-coreAAS
+CoreAAS
 =======
 This project is an implementation of the Platform Industrie 4.0 Asset Administration Shell (AAS) metamodel in OPC UA. It defines an open Information Model defining the main parts of the AAS metamodel.
 
@@ -10,6 +10,10 @@ For Industrie 4.0, an asset is any "object which has a value for an organization
 Assets shall have a logical representation in the "information world", for example shall be managed by IT-systems. Thus, an asset has to be precisely identified as an entity, shall have a "specific state within its life (at least a type or instance)", shall have communication capabilities, shall be represented by means of information and shall be able to provide technical functionality. This logical representation of an asset is called Administration Shell. The combination of asset and Administration Shell forms the so-called I4.0 Component.
 
 You can look into metamodel using software like [UAModeler](https://www.unified-automation.com/products/development-tools/uamodeler.html) from Unified Automation GmbH. The xml file in models folder can be easily imported in every OPC UA SDK allowing information model xml file to be imported.
+
+More information are available on the [wiki](https://github.com/OPCUAUniCT/coreAAS/wiki).
+
+An implementation of CoreAAS is available [here](https://github.com/OPCUAUniCT/node-opcua-coreaas). It is an extension for [node-opcua](https://github.com/node-opcua/node-opcua), an OPC UA Stack for Node.js.
 
 ---
 
@@ -35,15 +39,15 @@ Unstable (incomplete or bugged) :warning:
 | SubmodelElement  | :white_check_mark:  |
 | DataElement  | :white_check_mark:  |
 | Property  | :white_check_mark:  |
-| File  | :x:  |
+| File  | :white_check_mark:  |
 | Blob  | :x:  |
-| ReferenceElement  | :x:  |
-| SubmodelElementCollection  | :x:  |
+| ReferenceElement  | :white_check_mark:  |
+| SubmodelElementCollection  | :white_check_mark:  |
 | RelationshipElement  | :x:  |
 | Operation  | :x:  |
 | OperationVariable  | :x:  |
 | Event  | :x:  |
-| View  | :x:  |
+| View  | :white_check_mark:  |
 | ConceptDictionary  | :white_check_mark:  |
 | ConceptDescription  | :white_check_mark:  |
 | Reference  | :white_check_mark:  |
