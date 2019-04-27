@@ -1,3 +1,11 @@
+# **Version 0.2.1**
+
+## New ReferenceType
+- Created a new Non Hierarchical ReferenceType named "ContainsElement" for ViewType in order to reference the element indicated by ContainedElements
+
+## ViewType
+- Fixed ViewType in order to contain AASReferenceType instances by means of Organizes References in the ContainedElements Folder.
+
 # **Version 0.2.0**
 
 ## New ObjectTypes
