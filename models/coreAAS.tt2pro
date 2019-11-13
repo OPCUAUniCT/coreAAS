@@ -1,19 +1,26 @@
 ###########################
 # UaModeler Project File  #
-# Generated at 09.04.2019 #
+# Generated at 13.11.2019 #
 ###########################
 
 PROJECTNAME = coreAAS
 
-TEMPLATESET = ($TEMPLATES)/modeling/v1_0/t0/modeling.tt2set
+TEMPLATESET = ($TEMPLATES)/net/v3_0/t0/net_server.tt2set
 
 MODELS += ($MODELS)/Opc.Ua.NodeSet2.ua \
     coreaas.ua
 
+VARIABLES+= coreaas.ua: Namespace=UaUnict; Organization=Unict; 
+
 COLORS = ($MODELS)/Opc.Ua.NodeSet2.ua: #0000ff\
     coreaas.ua: #008000
 
-OUTPUTPATH = ../../../../
+PROJECTVARIABLES += GenerateDefaultApplication = false \
+    NetFramework = 3.5 \
+    ProjectNamespace =  \
+    ProjectOrganization = 
+
+OUTPUTPATH = ../../../../Desktop/ua_modeler
 
 GENERATE += coreaas.ua
 
