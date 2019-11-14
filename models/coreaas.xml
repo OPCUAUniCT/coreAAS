@@ -33,7 +33,7 @@
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="z7Onm9kvpkLkx/RenKd60A==" Version="1.6.2"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="K2Xg7PGymWM7EzovCu4+Fw==" Version="1.6.2"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
@@ -2766,6 +2766,62 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1019" BrowseName="1:OperationType">
+        <DisplayName>OperationType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=7001</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+        </References>
+    </UAObjectType>
+    <UAMethod ParentNodeId="ns=1;i=1019" NodeId="ns=1;i=7001" BrowseName="1:act">
+        <DisplayName>act</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1019</Reference>
+        </References>
+    </UAMethod>
+    <UAObjectType NodeId="ns=1;i=1020" BrowseName="1:RelationshipElementType">
+        <DisplayName>RelationshipElementType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5072</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5073</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=5072" BrowseName="1:first">
+        <DisplayName>first</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6091</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1020</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5072" ValueRank="1" NodeId="ns=1;i=6091" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5072</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=5073" BrowseName="1:second">
+        <DisplayName>second</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6092</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1020</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5073" ValueRank="1" NodeId="ns=1;i=6092" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5073</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1015" BrowseName="1:SubmodelElementCollectionType">
         <DisplayName>SubmodelElementCollectionType</DisplayName>
         <Description>A submodel element collection is a collection of submodel elements.</Description>
@@ -2822,9 +2878,9 @@ AAS or a reference to an external object or entity.</Description>
     <UAVariable DataType="UInt32" ParentNodeId="ns=1;i=5058" NodeId="ns=1;i=6090" BrowseName="1:index" AccessLevel="3">
         <DisplayName>index</DisplayName>
         <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5058</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5058</Reference>
         </References>
     </UAVariable>
     <UAObjectType NodeId="ns=1;i=1013" BrowseName="1:SubmodelType">
