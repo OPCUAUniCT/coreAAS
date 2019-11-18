@@ -4,6 +4,8 @@ This project is an implementation of the Platform Industrie 4.0 Asset Administra
 
 The project is still work in progress and all the main components already defined will be tracked in the table at the end of this document.
 
+CoreAAS is implemented in [node-opcua-coreaas](https://github.com/OPCUAUniCT/node-opcua-coreaas), an extension of the OPC UA SDK for Node.js [node-opcua](https://github.com/node-opcua/node-opcua).
+
 ## Overview
 For Industrie 4.0, an asset is any "object which has a value for an organization". Thus,assets in Industrie 4.0 can take almost any form, for example be a production system, a product, a software installation, intellectual properties or even human resources.
 
