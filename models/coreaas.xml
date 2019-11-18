@@ -33,7 +33,7 @@
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="VBT+v5MWd//NqdxC5kNw+w==" Version="1.6.2"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="iq143ueA5QZjoIsim4wb5g==" Version="1.6.2"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
@@ -2790,6 +2790,48 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1019" BrowseName="1:RelationshipElementType">
+        <DisplayName>RelationshipElementType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5074</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5075</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject ParentNodeId="ns=1;i=1019" NodeId="ns=1;i=5074" BrowseName="1:first">
+        <DisplayName>first</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6093</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1019</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5074" ValueRank="1" NodeId="ns=1;i=6093" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5074</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1019" NodeId="ns=1;i=5075" BrowseName="1:second">
+        <DisplayName>second</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6094</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1019</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5075" ValueRank="1" NodeId="ns=1;i=6094" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5075</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1015" BrowseName="1:SubmodelElementCollectionType">
         <DisplayName>SubmodelElementCollectionType</DisplayName>
         <Description>A submodel element collection is a collection of submodel elements.</Description>
@@ -3043,10 +3085,10 @@ AAS or a reference to an external object or entity.</Description>
     <UAObject SymbolicName="ElementRef" ParentNodeId="ns=1;i=5068" NodeId="ns=1;i=5072" BrowseName="1:&lt;ElementRef>">
         <DisplayName>&lt;ElementRef></DisplayName>
         <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5068</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6091</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5068</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="Key" ParentNodeId="ns=1;i=5072" ValueRank="1" NodeId="ns=1;i=6091" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">

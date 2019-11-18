@@ -45,7 +45,7 @@ Unstable (incomplete or bugged) :warning:
 | Blob  | :x:  |
 | ReferenceElement  | :white_check_mark:  |
 | SubmodelElementCollection  | :white_check_mark:  |
-| RelationshipElement  | :x:  |
+| RelationshipElement  | :white_check_mark:  |
 | Operation  | :x:  |
 | OperationVariable  | :x:  |
 | Event  | :x:  |
