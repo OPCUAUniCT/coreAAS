@@ -42,9 +42,39 @@
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="YiWx/e5kFyUMrF8tUhqVBg==" Version="1.6.3"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="o039vmHYpgpImDQ2VZJNhg==" Version="1.6.3"/>
         </Extension>
     </Extensions>
+    <UADataType NodeId="ns=1;i=3003" BrowseName="1:AssetKind">
+        <DisplayName>AssetKind</DisplayName>
+        <Description>Allowed values for an HasKind entity</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6006</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+        </References>
+        <Definition Name="1:AssetKind">
+            <Field Name="Type" Value="0"/>
+            <Field Name="Instance" Value="1"/>
+        </Definition>
+    </UADataType>
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3003" ValueRank="1" NodeId="ns=1;i=6006" ArrayDimensions="2" BrowseName="EnumStrings">
+        <DisplayName>EnumStrings</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3003</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:ListOfLocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Type</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Instance</uax:Text>
+                </uax:LocalizedText>
+            </uax:ListOfLocalizedText>
+        </Value>
+    </UAVariable>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
         <DisplayName>IdentifierType</DisplayName>
         <Description>All the allowed id type for an identifier</Description>
@@ -215,36 +245,6 @@
             </uax:ListOfLocalizedText>
         </Value>
     </UAVariable>
-    <UADataType NodeId="ns=1;i=3003" BrowseName="1:AssetKind">
-        <DisplayName>AssetKind</DisplayName>
-        <Description>Allowed values for an HasKind entity</Description>
-        <References>
-            <Reference ReferenceType="HasProperty">ns=1;i=6006</Reference>
-            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
-        </References>
-        <Definition Name="1:AssetKind">
-            <Field Name="Type" Value="0"/>
-            <Field Name="Instance" Value="1"/>
-        </Definition>
-    </UADataType>
-    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3003" ValueRank="1" NodeId="ns=1;i=6006" ArrayDimensions="2" BrowseName="EnumStrings">
-        <DisplayName>EnumStrings</DisplayName>
-        <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3003</Reference>
-            <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-        </References>
-        <Value>
-            <uax:ListOfLocalizedText>
-                <uax:LocalizedText>
-                    <uax:Text>Type</uax:Text>
-                </uax:LocalizedText>
-                <uax:LocalizedText>
-                    <uax:Text>Instance</uax:Text>
-                </uax:LocalizedText>
-            </uax:ListOfLocalizedText>
-        </Value>
-    </UAVariable>
     <UADataType NodeId="ns=1;i=3010" BrowseName="1:ModelingKind">
         <DisplayName>ModelingKind</DisplayName>
         <References>
@@ -259,9 +259,9 @@
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3010" ValueRank="1" NodeId="ns=1;i=6095" ArrayDimensions="2" BrowseName="EnumStrings">
         <DisplayName>EnumStrings</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3010</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
             <uax:ListOfLocalizedText>
@@ -1414,46 +1414,46 @@
         mFtZT0ib3BjOkJvb2xlYW4iIE5hbWU9ImxvY2FsIi8+CiAgPG9wYzpGaWVsZCBUeXBlTmFtZ
         T0idG5zOktleUVsZW1lbnRzIiBOYW1lPSJ0eXBlIi8+CiAgPG9wYzpGaWVsZCBUeXBlTmFtZ
         T0ib3BjOkNoYXJBcnJheSIgTmFtZT0idmFsdWUiLz4KIDwvb3BjOlN0cnVjdHVyZWRUeXBlP
-        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJJZGVudGlma
-        WVyVHlwZSI+CiAgPG9wYzpEb2N1bWVudGF0aW9uPkFsbCB0aGUgYWxsb3dlZCBpZCB0eXBlI
-        GZvciBhbiBpZGVudGlmaWVyPC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0Z
-        WRWYWx1ZSBOYW1lPSJJUkRJIiBWYWx1ZT0iMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlI
-        E5hbWU9IlVSSSIgVmFsdWU9IjEiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDd
-        XN0b20iIFZhbHVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyY
-        XRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iS2V5RWxlbWVudHMiPgogIDxvcGM6R
-        G9jdW1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiBvZiBhbGwgdGhlIG5hbWVzIG9mIGVudGl0a
-        WVzIGEgS2V5IGNhbiByZWZlciB0bzwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iR2xvYmFsUmVmZXJlbmNlIiBWYWx1ZT0iMCIvPgogIDxvcGM6R
-        W51bWVyYXRlZFZhbHVlIE5hbWU9IkFjY2Vzc1Blcm1pc3Npb25SdWxlIiBWYWx1ZT0iMSIvP
-        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkJsb2IiIFZhbHVlPSIyIi8+CiAgPG9wY
-        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ29uY2VwdERpY3Rpb25hcnkiIFZhbHVlPSIzIi8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRGF0YUVsZW1lbnQiIFZhbHVlPSI0Ii8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRmlsZSIgVmFsdWU9IjUiLz4KICA8b3BjO
-        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJFdmVudCIgVmFsdWU9IjYiLz4KICA8b3BjOkVudW1lc
-        mF0ZWRWYWx1ZSBOYW1lPSJPcGVyYXRpb24iIFZhbHVlPSI3Ii8+CiAgPG9wYzpFbnVtZXJhd
-        GVkVmFsdWUgTmFtZT0iT3BlcmF0aW9uVmFyaWFibGUiIFZhbHVlPSI4Ii8+CiAgPG9wYzpFb
-        nVtZXJhdGVkVmFsdWUgTmFtZT0iUHJvcGVydHkiIFZhbHVlPSI5Ii8+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iUmVmZXJlbmNlRWxlbWVudCIgVmFsdWU9IjEwIi8+CiAgPG9wY
-        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iUmVsYXRpb25zaGlwRWxlbWVudCIgVmFsdWU9IjExI
-        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU3VibW9kZWxFbGVtZW50IiBWYWx1Z
-        T0iMTIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJTdWJtb2RlbEVsZW1lbnRDb
-        2xsZWN0aW9uIiBWYWx1ZT0iMTMiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJWa
-        WV3IiBWYWx1ZT0iMTQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJBc3NldCIgV
-        mFsdWU9IjE1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQXNzZXRBZG1pbmlzd
-        HJhdGlvblNoZWxsIiBWYWx1ZT0iMTYiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
-        SJDb25jZXB0RGVzY3JpcHRpb24iIFZhbHVlPSIxNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhb
-        HVlIE5hbWU9IlN1Ym1vZGVsIiBWYWx1ZT0iMTgiLz4KIDwvb3BjOkVudW1lcmF0ZWRUeXBlP
-        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJLZXlUeXBlI
-        j4KICA8b3BjOkRvY3VtZW50YXRpb24+VGhlIGtpbmQgb2YgaWRlbnRpZmllcnMgY29udGFpb
-        mVkIGluIGEgS2V5PC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
-        SBOYW1lPSJpZFNob3J0IiBWYWx1ZT0iMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
-        WU9IklSREkiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVVJJI
-        iBWYWx1ZT0iMiIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkN1c3RvbSIgVmFsd
-        WU9IjMiLz4KIDwvb3BjOkVudW1lcmF0ZWRUeXBlPgogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZ
-        W5ndGhJbkJpdHM9IjMyIiBOYW1lPSJBc3NldEtpbmQiPgogIDxvcGM6RG9jdW1lbnRhdGlvb
-        j5BbGxvd2VkIHZhbHVlcyBmb3IgYW4gSGFzS2luZCBlbnRpdHk8L29wYzpEb2N1bWVudGF0a
-        W9uPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlR5cGUiIFZhbHVlPSIwIi8+CiAgP
-        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSW5zdGFuY2UiIFZhbHVlPSIxIi8+CiA8L29wY
+        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJBc3NldEtpb
+        mQiPgogIDxvcGM6RG9jdW1lbnRhdGlvbj5BbGxvd2VkIHZhbHVlcyBmb3IgYW4gSGFzS2luZ
+        CBlbnRpdHk8L29wYzpEb2N1bWVudGF0aW9uPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9IlR5cGUiIFZhbHVlPSIwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSW5zd
+        GFuY2UiIFZhbHVlPSIxIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyY
+        XRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iSWRlbnRpZmllclR5cGUiPgogIDxvc
+        GM6RG9jdW1lbnRhdGlvbj5BbGwgdGhlIGFsbG93ZWQgaWQgdHlwZSBmb3IgYW4gaWRlbnRpZ
+        mllcjwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iS
+        VJESSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJVUkkiIFZhb
+        HVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ3VzdG9tIiBWYWx1ZT0iM
+        iIvPgogPC9vcGM6RW51bWVyYXRlZFR5cGU+CiA8b3BjOkVudW1lcmF0ZWRUeXBlIExlbmd0a
+        EluQml0cz0iMzIiIE5hbWU9IktleUVsZW1lbnRzIj4KICA8b3BjOkRvY3VtZW50YXRpb24+Q
+        W4gZW51bWVyYXRpb24gb2YgYWxsIHRoZSBuYW1lcyBvZiBlbnRpdGllcyBhIEtleSBjYW4gc
+        mVmZXIgdG88L29wYzpEb2N1bWVudGF0aW9uPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9Ikdsb2JhbFJlZmVyZW5jZSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
+        SBOYW1lPSJBY2Nlc3NQZXJtaXNzaW9uUnVsZSIgVmFsdWU9IjEiLz4KICA8b3BjOkVudW1lc
+        mF0ZWRWYWx1ZSBOYW1lPSJCbG9iIiBWYWx1ZT0iMiIvPgogIDxvcGM6RW51bWVyYXRlZFZhb
+        HVlIE5hbWU9IkNvbmNlcHREaWN0aW9uYXJ5IiBWYWx1ZT0iMyIvPgogIDxvcGM6RW51bWVyY
+        XRlZFZhbHVlIE5hbWU9IkRhdGFFbGVtZW50IiBWYWx1ZT0iNCIvPgogIDxvcGM6RW51bWVyY
+        XRlZFZhbHVlIE5hbWU9IkZpbGUiIFZhbHVlPSI1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsd
+        WUgTmFtZT0iRXZlbnQiIFZhbHVlPSI2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZ
+        T0iT3BlcmF0aW9uIiBWYWx1ZT0iNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9I
+        k9wZXJhdGlvblZhcmlhYmxlIiBWYWx1ZT0iOCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlI
+        E5hbWU9IlByb3BlcnR5IiBWYWx1ZT0iOSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9IlJlZmVyZW5jZUVsZW1lbnQiIFZhbHVlPSIxMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhb
+        HVlIE5hbWU9IlJlbGF0aW9uc2hpcEVsZW1lbnQiIFZhbHVlPSIxMSIvPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9IlN1Ym1vZGVsRWxlbWVudCIgVmFsdWU9IjEyIi8+CiAgPG9wY
+        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU3VibW9kZWxFbGVtZW50Q29sbGVjdGlvbiIgVmFsd
+        WU9IjEzIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVmlldyIgVmFsdWU9IjE0I
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQXNzZXQiIFZhbHVlPSIxNSIvPgogI
+        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkFzc2V0QWRtaW5pc3RyYXRpb25TaGVsbCIgV
+        mFsdWU9IjE2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ29uY2VwdERlc2Nya
+        XB0aW9uIiBWYWx1ZT0iMTciLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJTdWJtb
+        2RlbCIgVmFsdWU9IjE4Ii8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyY
+        XRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iS2V5VHlwZSI+CiAgPG9wYzpEb2N1b
+        WVudGF0aW9uPlRoZSBraW5kIG9mIGlkZW50aWZpZXJzIGNvbnRhaW5lZCBpbiBhIEtleTwvb
+        3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaWRTaG9yd
+        CIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJUkRJIiBWYWx1Z
+        T0iMSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlVSSSIgVmFsdWU9IjIiLz4KI
+        CA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDdXN0b20iIFZhbHVlPSIzIi8+CiA8L29wY
         zpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzM
         iIgTmFtZT0iTW9kZWxpbmdLaW5kIj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJUZ
         W1wbGF0ZSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJbnN0Y
@@ -1547,71 +1547,71 @@
         29wY2ZvdW5kYXRpb24ub3JnL1VBLzIwMDgvMDIvVHlwZXMueHNkIiB4bWxuczp4cz0iaHR0c
         DovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPgogPHhzOmltcG9ydCBuYW1lc3BhY2U9I
         mh0dHA6Ly9vcGNmb3VuZGF0aW9uLm9yZy9VQS8yMDA4LzAyL1R5cGVzLnhzZCIvPgogPHhzO
-        nNpbXBsZVR5cGUgbmFtZT0iSWRlbnRpZmllclR5cGUiPgogIDx4czphbm5vdGF0aW9uPgogI
-        CA8eHM6ZG9jdW1lbnRhdGlvbj5BbGwgdGhlIGFsbG93ZWQgaWQgdHlwZSBmb3IgYW4gaWRlb
-        nRpZmllcjwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzOnJlc
-        3RyaWN0aW9uIGJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iS
-        VJESV8wIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVVJJXzEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJDdXN0b21fMiIvPgogIDwveHM6cmVzdHJpY3Rpb24+CiA8L3hzO
-        nNpbXBsZVR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6SWRlbnRpZmllclR5cGUiIG5hb
-        WU9IklkZW50aWZpZXJUeXBlIi8+CiA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mSWRlb
-        nRpZmllclR5cGUiPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzP
-        SIwIiBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0idG5zOklkZW50aWZpZXJUeXBlIiBuY
-        W1lPSJJZGVudGlmaWVyVHlwZSIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlP
-        gogPC94czpjb21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZJZGVud
-        GlmaWVyVHlwZSIgbmFtZT0iTGlzdE9mSWRlbnRpZmllclR5cGUiIG5pbGxhYmxlPSJ0cnVlI
-        i8+CiA8eHM6c2ltcGxlVHlwZSBuYW1lPSJLZXlFbGVtZW50cyI+CiAgPHhzOmFubm90YXRpb
-        24+CiAgIDx4czpkb2N1bWVudGF0aW9uPkFuIGVudW1lcmF0aW9uIG9mIGFsbCB0aGUgbmFtZ
-        XMgb2YgZW50aXRpZXMgYSBLZXkgY2FuIHJlZmVyIHRvPC94czpkb2N1bWVudGF0aW9uPgogI
-        DwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZT0ieHM6c3RyaW5nIj4KI
-        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJHbG9iYWxSZWZlcmVuY2VfMCIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IkFjY2Vzc1Blcm1pc3Npb25SdWxlXzEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJCbG9iXzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJDb
-        25jZXB0RGljdGlvbmFyeV8zIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iRGF0YUVsZ
-        W1lbnRfNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkZpbGVfNSIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IkV2ZW50XzYiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlP
-        SJPcGVyYXRpb25fNyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9Ik9wZXJhdGlvblZhc
-        mlhYmxlXzgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJQcm9wZXJ0eV85Ii8+CiAgI
-        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iUmVmZXJlbmNlRWxlbWVudF8xMCIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IlJlbGF0aW9uc2hpcEVsZW1lbnRfMTEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJTdWJtb2RlbEVsZW1lbnRfMTIiLz4KICAgPHhzOmVudW1lcmF0a
-        W9uIHZhbHVlPSJTdWJtb2RlbEVsZW1lbnRDb2xsZWN0aW9uXzEzIi8+CiAgIDx4czplbnVtZ
-        XJhdGlvbiB2YWx1ZT0iVmlld18xNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkFzc
-        2V0XzE1Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQXNzZXRBZG1pbmlzdHJhdGlvb
-        lNoZWxsXzE2Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQ29uY2VwdERlc2NyaXB0a
-        W9uXzE3Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iU3VibW9kZWxfMTgiLz4KICA8L
-        3hzOnJlc3RyaWN0aW9uPgogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0id
-        G5zOktleUVsZW1lbnRzIiBuYW1lPSJLZXlFbGVtZW50cyIvPgogPHhzOmNvbXBsZXhUeXBlI
-        G5hbWU9Ikxpc3RPZktleUVsZW1lbnRzIj4KICA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZ
-        W50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuczpLZXlFb
-        GVtZW50cyIgbmFtZT0iS2V5RWxlbWVudHMiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZ
-        XF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzd
-        E9mS2V5RWxlbWVudHMiIG5hbWU9Ikxpc3RPZktleUVsZW1lbnRzIiBuaWxsYWJsZT0idHJ1Z
-        SIvPgogPHhzOnNpbXBsZVR5cGUgbmFtZT0iS2V5VHlwZSI+CiAgPHhzOmFubm90YXRpb24+C
-        iAgIDx4czpkb2N1bWVudGF0aW9uPlRoZSBraW5kIG9mIGlkZW50aWZpZXJzIGNvbnRhaW5lZ
-        CBpbiBhIEtleTwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzO
-        nJlc3RyaWN0aW9uIGJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
-        T0iaWRTaG9ydF8wIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iSVJESV8xIi8+CiAgI
-        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVVJJXzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
-        HVlPSJDdXN0b21fMyIvPgogIDwveHM6cmVzdHJpY3Rpb24+CiA8L3hzOnNpbXBsZVR5cGU+C
-        iA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6S2V5VHlwZSIgbmFtZT0iS2V5VHlwZSIvPgogPHhzO
-        mNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZktleVR5cGUiPgogIDx4czpzZXF1ZW5jZT4KICAgP
-        HhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0id
-        G5zOktleVR5cGUiIG5hbWU9IktleVR5cGUiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZ
-        XF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzd
-        E9mS2V5VHlwZSIgbmFtZT0iTGlzdE9mS2V5VHlwZSIgbmlsbGFibGU9InRydWUiLz4KIDx4c
-        zpzaW1wbGVUeXBlIG5hbWU9IkFzc2V0S2luZCI+CiAgPHhzOmFubm90YXRpb24+CiAgIDx4c
-        zpkb2N1bWVudGF0aW9uPkFsbG93ZWQgdmFsdWVzIGZvciBhbiBIYXNLaW5kIGVudGl0eTwve
-        HM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzOnJlc3RyaWN0aW9uI
-        GJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVHlwZV8wIi8+C
-        iAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iSW5zdGFuY2VfMSIvPgogIDwveHM6cmVzdHJpY
-        3Rpb24+CiA8L3hzOnNpbXBsZVR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6QXNzZXRLa
-        W5kIiBuYW1lPSJBc3NldEtpbmQiLz4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZBc
-        3NldEtpbmQiPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwI
-        iBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0idG5zOkFzc2V0S2luZCIgbmFtZT0iQXNzZ
-        XRLaW5kIiBuaWxsYWJsZT0idHJ1ZSIvPgogIDwveHM6c2VxdWVuY2U+CiA8L3hzOmNvbXBsZ
-        XhUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOkxpc3RPZkFzc2V0S2luZCIgbmFtZT0iT
-        GlzdE9mQXNzZXRLaW5kIiBuaWxsYWJsZT0idHJ1ZSIvPgogPHhzOnNpbXBsZVR5cGUgbmFtZ
+        nNpbXBsZVR5cGUgbmFtZT0iQXNzZXRLaW5kIj4KICA8eHM6YW5ub3RhdGlvbj4KICAgPHhzO
+        mRvY3VtZW50YXRpb24+QWxsb3dlZCB2YWx1ZXMgZm9yIGFuIEhhc0tpbmQgZW50aXR5PC94c
+        zpkb2N1bWVudGF0aW9uPgogIDwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gY
+        mFzZT0ieHM6c3RyaW5nIj4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJUeXBlXzAiLz4KI
+        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJJbnN0YW5jZV8xIi8+CiAgPC94czpyZXN0cmljd
+        Glvbj4KIDwveHM6c2ltcGxlVHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpBc3NldEtpb
+        mQiIG5hbWU9IkFzc2V0S2luZCIvPgogPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZkFzc
+        2V0S2luZCI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiI
+        G1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6QXNzZXRLaW5kIiBuYW1lPSJBc3Nld
+        EtpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxle
+        FR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mQXNzZXRLaW5kIiBuYW1lPSJMa
+        XN0T2ZBc3NldEtpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c2ltcGxlVHlwZSBuYW1lP
+        SJJZGVudGlmaWVyVHlwZSI+CiAgPHhzOmFubm90YXRpb24+CiAgIDx4czpkb2N1bWVudGF0a
+        W9uPkFsbCB0aGUgYWxsb3dlZCBpZCB0eXBlIGZvciBhbiBpZGVudGlmaWVyPC94czpkb2N1b
+        WVudGF0aW9uPgogIDwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZT0ie
+        HM6c3RyaW5nIj4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJJUkRJXzAiLz4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJVUklfMSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9I
+        kN1c3RvbV8yIi8+CiAgPC94czpyZXN0cmljdGlvbj4KIDwveHM6c2ltcGxlVHlwZT4KIDx4c
+        zplbGVtZW50IHR5cGU9InRuczpJZGVudGlmaWVyVHlwZSIgbmFtZT0iSWRlbnRpZmllclR5c
+        GUiLz4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZJZGVudGlmaWVyVHlwZSI+CiAgP
+        HhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0id
+        W5ib3VuZGVkIiB0eXBlPSJ0bnM6SWRlbnRpZmllclR5cGUiIG5hbWU9IklkZW50aWZpZXJUe
+        XBlIiBuaWxsYWJsZT0idHJ1ZSIvPgogIDwveHM6c2VxdWVuY2U+CiA8L3hzOmNvbXBsZXhUe
+        XBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOkxpc3RPZklkZW50aWZpZXJUeXBlIiBuYW1lP
+        SJMaXN0T2ZJZGVudGlmaWVyVHlwZSIgbmlsbGFibGU9InRydWUiLz4KIDx4czpzaW1wbGVUe
+        XBlIG5hbWU9IktleUVsZW1lbnRzIj4KICA8eHM6YW5ub3RhdGlvbj4KICAgPHhzOmRvY3VtZ
+        W50YXRpb24+QW4gZW51bWVyYXRpb24gb2YgYWxsIHRoZSBuYW1lcyBvZiBlbnRpdGllcyBhI
+        EtleSBjYW4gcmVmZXIgdG88L3hzOmRvY3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0aW9uP
+        gogIDx4czpyZXN0cmljdGlvbiBiYXNlPSJ4czpzdHJpbmciPgogICA8eHM6ZW51bWVyYXRpb
+        24gdmFsdWU9Ikdsb2JhbFJlZmVyZW5jZV8wIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
+        T0iQWNjZXNzUGVybWlzc2lvblJ1bGVfMSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9I
+        kJsb2JfMiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkNvbmNlcHREaWN0aW9uYXJ5X
+        zMiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJEYXRhRWxlbWVudF80Ii8+CiAgIDx4c
+        zplbnVtZXJhdGlvbiB2YWx1ZT0iRmlsZV81Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
+        T0iRXZlbnRfNiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9Ik9wZXJhdGlvbl83Ii8+C
+        iAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iT3BlcmF0aW9uVmFyaWFibGVfOCIvPgogICA8e
+        HM6ZW51bWVyYXRpb24gdmFsdWU9IlByb3BlcnR5XzkiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJSZWZlcmVuY2VFbGVtZW50XzEwIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
+        T0iUmVsYXRpb25zaGlwRWxlbWVudF8xMSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9I
+        lN1Ym1vZGVsRWxlbWVudF8xMiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlN1Ym1vZ
+        GVsRWxlbWVudENvbGxlY3Rpb25fMTMiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJWa
+        WV3XzE0Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQXNzZXRfMTUiLz4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJBc3NldEFkbWluaXN0cmF0aW9uU2hlbGxfMTYiLz4KICAgP
+        HhzOmVudW1lcmF0aW9uIHZhbHVlPSJDb25jZXB0RGVzY3JpcHRpb25fMTciLz4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJTdWJtb2RlbF8xOCIvPgogIDwveHM6cmVzdHJpY3Rpb24+C
+        iA8L3hzOnNpbXBsZVR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6S2V5RWxlbWVudHMiI
+        G5hbWU9IktleUVsZW1lbnRzIi8+CiA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mS2V5R
+        WxlbWVudHMiPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwI
+        iBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0idG5zOktleUVsZW1lbnRzIiBuYW1lPSJLZ
+        XlFbGVtZW50cyIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlPgogPC94czpjb
+        21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZLZXlFbGVtZW50cyIgb
+        mFtZT0iTGlzdE9mS2V5RWxlbWVudHMiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c2ltcGxlV
+        HlwZSBuYW1lPSJLZXlUeXBlIj4KICA8eHM6YW5ub3RhdGlvbj4KICAgPHhzOmRvY3VtZW50Y
+        XRpb24+VGhlIGtpbmQgb2YgaWRlbnRpZmllcnMgY29udGFpbmVkIGluIGEgS2V5PC94czpkb
+        2N1bWVudGF0aW9uPgogIDwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZ
+        T0ieHM6c3RyaW5nIj4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJpZFNob3J0XzAiLz4KI
+        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJJUkRJXzEiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJVUklfMiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkN1c3RvbV8zIi8+C
+        iAgPC94czpyZXN0cmljdGlvbj4KIDwveHM6c2ltcGxlVHlwZT4KIDx4czplbGVtZW50IHR5c
+        GU9InRuczpLZXlUeXBlIiBuYW1lPSJLZXlUeXBlIi8+CiA8eHM6Y29tcGxleFR5cGUgbmFtZ
+        T0iTGlzdE9mS2V5VHlwZSI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY
+        2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6S2V5VHlwZSIgbmFtZ
+        T0iS2V5VHlwZSIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlPgogPC94czpjb
+        21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZLZXlUeXBlIiBuYW1lP
+        SJMaXN0T2ZLZXlUeXBlIiBuaWxsYWJsZT0idHJ1ZSIvPgogPHhzOnNpbXBsZVR5cGUgbmFtZ
         T0iTW9kZWxpbmdLaW5kIj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZT0ieHM6c3RyaW5nIj4KI
         CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJUZW1wbGF0ZV8wIi8+CiAgIDx4czplbnVtZXJhd
         GlvbiB2YWx1ZT0iSW5zdGFuY2VfMSIvPgogIDwveHM6cmVzdHJpY3Rpb24+CiA8L3hzOnNpb
@@ -1737,6 +1737,13 @@
         </References>
         <InverseName Locale="en">ConceptDescriptionOf</InverseName>
     </UAReferenceType>
+    <UAReferenceType NodeId="ns=1;i=4012" BrowseName="1:HasDataSpecification">
+        <DisplayName>HasDataSpecification</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
+        </References>
+        <InverseName Locale="en">DataSpecificationOf</InverseName>
+    </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4004" BrowseName="1:HasEmbeddedDataSpecification">
         <DisplayName>HasEmbeddedDataSpecification</DisplayName>
         <Description>Every Object with Data Specification references the DataSpecification by means of this ReferenceType</Description>
@@ -1825,6 +1832,7 @@
         <DisplayName>AASType</DisplayName>
         <Description>An ObjectType representing an AssetAdministrationShell</Description>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5077</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5041</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5007</Reference>
@@ -1837,6 +1845,14 @@
             <Reference ReferenceType="HasComponent">ns=1;i=5069</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5077" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5041" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2059,12 +2075,21 @@
         <DisplayName>AdministrativeInformationType</DisplayName>
         <Description>An ObjectType containing administration information</Description>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5078</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5019</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6017</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6016</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1003" NodeId="ns=1;i=5078" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1003</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1003" NodeId="ns=1;i=5019" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2120,6 +2145,7 @@
         <DisplayName>AssetType</DisplayName>
         <Description>An ObjectType representing an Asset</Description>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5079</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5034</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5033</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5032</Reference>
@@ -2130,6 +2156,14 @@
             <Reference ReferenceType="HasProperty">ns=1;i=6054</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5079" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1014</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5034" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2227,6 +2261,7 @@
         <Description>An ObjectType for entities describin semantic for other elements</Description>
         <References>
             <Reference ReferenceType="IsCaseOf">ns=1;i=5013</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5080</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5014</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5012</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
@@ -2251,6 +2286,14 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=5080" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1008</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=5014" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2613,6 +2656,7 @@
         <DisplayName>SubmodelElementType</DisplayName>
         <Description>An abstract class for all submodel element of a Submodel</Description>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5081</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5053</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6037</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6038</Reference>
@@ -2623,6 +2667,14 @@
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5081" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1010</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5053" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2949,6 +3001,7 @@ AAS or a reference to an external object or entity.</Description>
     <UAObjectType NodeId="ns=1;i=1013" BrowseName="1:SubmodelType">
         <DisplayName>SubmodelType</DisplayName>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5082</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5031</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5028</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6048</Reference>
@@ -2961,6 +3014,14 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5082" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1013</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5031" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -3082,6 +3143,7 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>ViewType</DisplayName>
         <Description>A view is a collection of referable elements w.r.t. a specific viewpoint of one or more stakeholders.</Description>
         <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5083</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5063</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5068</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6088</Reference>
@@ -3091,6 +3153,14 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5083" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1018</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5063" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
