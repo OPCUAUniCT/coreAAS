@@ -39,10 +39,11 @@
         <Alias Alias="HasConceptDescription">ns=1;i=4003</Alias>
         <Alias Alias="HasEmbeddedDataSpecification">ns=1;i=4004</Alias>
         <Alias Alias="IsCaseOf">ns=1;i=4006</Alias>
+        <Alias Alias="HasDataSpecification">ns=1;i=4012</Alias>
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="o039vmHYpgpImDQ2VZJNhg==" Version="1.6.3"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="wUC3ncRYsRhI9ddYms/fOQ==" Version="1.6.3"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3003" BrowseName="1:AssetKind">
@@ -1832,7 +1833,7 @@
         <DisplayName>AASType</DisplayName>
         <Description>An ObjectType representing an AssetAdministrationShell</Description>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5077</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5077</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5041</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5007</Reference>
@@ -1850,7 +1851,7 @@
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1002</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5041" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -2075,7 +2076,7 @@
         <DisplayName>AdministrativeInformationType</DisplayName>
         <Description>An ObjectType containing administration information</Description>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5078</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5078</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5019</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6017</Reference>
@@ -2087,7 +2088,7 @@
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1003</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1003</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1003" NodeId="ns=1;i=5019" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -2145,7 +2146,7 @@
         <DisplayName>AssetType</DisplayName>
         <Description>An ObjectType representing an Asset</Description>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5079</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5079</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5034</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5033</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5032</Reference>
@@ -2161,7 +2162,7 @@
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1014</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1014</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5034" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -2261,7 +2262,7 @@
         <Description>An ObjectType for entities describin semantic for other elements</Description>
         <References>
             <Reference ReferenceType="IsCaseOf">ns=1;i=5013</Reference>
-            <Reference ReferenceType="HasComponent">ns=1;i=5080</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5080</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5014</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5012</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
@@ -2291,7 +2292,7 @@
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1008</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1008</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=5014" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -2656,7 +2657,7 @@
         <DisplayName>SubmodelElementType</DisplayName>
         <Description>An abstract class for all submodel element of a Submodel</Description>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5081</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5081</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5053</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6037</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6038</Reference>
@@ -2672,7 +2673,7 @@
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1010</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5053" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -3001,7 +3002,7 @@ AAS or a reference to an external object or entity.</Description>
     <UAObjectType NodeId="ns=1;i=1013" BrowseName="1:SubmodelType">
         <DisplayName>SubmodelType</DisplayName>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5082</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5082</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5031</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5028</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6048</Reference>
@@ -3019,7 +3020,7 @@ AAS or a reference to an external object or entity.</Description>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1013</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1013</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5031" BrowseName="1:&lt;EmbeddedDataSpecification>">
@@ -3143,7 +3144,7 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>ViewType</DisplayName>
         <Description>A view is a collection of referable elements w.r.t. a specific viewpoint of one or more stakeholders.</Description>
         <References>
-            <Reference ReferenceType="HasComponent">ns=1;i=5083</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5083</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5063</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5068</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6088</Reference>
@@ -3158,7 +3159,7 @@ AAS or a reference to an external object or entity.</Description>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1018</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5063" BrowseName="1:&lt;EmbeddedDataSpecification>">
