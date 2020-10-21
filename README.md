@@ -1,6 +1,6 @@
 CoreAAS
 =======
-This project is an implementation of the Platform Industrie 4.0 Asset Administration Shell (AAS) metamodel in OPC UA. It defines an open Information Model defining the main parts of the AAS metamodel. This Information is based on the version 2.0 of the AAS metamodel.
+This project is an implementation of the Platform Industrie 4.0 Asset Administration Shell (AAS) metamodel in OPC UA. It defines an open Information Model defining the main parts of the AAS metamodel. This Information is based on the version 2.1 of the AAS metamodel.
 
 The project is still work in progress and all the main components already defined will be tracked in the table at the end of this document.
 
