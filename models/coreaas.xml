@@ -4,7 +4,7 @@
         <Uri>http://dieei.unict.it/coreAAS/</Uri>
     </NamespaceUris>
     <Models>
-        <Model ModelUri="http://dieei.unict.it/coreAAS/" PublicationDate="2019-12-09T11:54:41Z" Version="1.7.0">
+        <Model ModelUri="http://dieei.unict.it/coreAAS/" PublicationDate="2020-10-21T07:37:46Z" Version="2.1.0">
             <RequiredModel ModelUri="http://opcfoundation.org/UA/" PublicationDate="2020-04-14T00:00:00Z" Version="1.04.6"/>
         </Model>
     </Models>
@@ -45,7 +45,7 @@
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="S4zOCXvqGDQyCTJF2xp9tQ==" Version="1.6.4"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="kxo+L7q9nTG6HhHY4ROuyg==" Version="1.6.4"/>
         </Extension>
     </Extensions>
     <UADataType NodeId="ns=1;i=3003" BrowseName="1:AssetKind">
@@ -105,9 +105,9 @@
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3012" ValueRank="1" NodeId="ns=1;i=6112" ArrayDimensions="15" BrowseName="EnumStrings">
         <DisplayName>EnumStrings</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3012</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
             <uax:ListOfLocalizedText>
@@ -178,9 +178,9 @@
     <UAVariable DataType="EnumValueType" ParentNodeId="ns=1;i=3011" ValueRank="1" NodeId="ns=1;i=6108" ArrayDimensions="2" BrowseName="EnumValues">
         <DisplayName>EnumValues</DisplayName>
         <References>
-            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3011</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
             <uax:ListOfExtensionObject>
@@ -2473,9 +2473,9 @@
         <DisplayName>billOfMaterial</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1014</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6103</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1014</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="Key" ParentNodeId="ns=1;i=5084" ValueRank="1" NodeId="ns=1;i=6103" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
@@ -3041,8 +3041,8 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAObjectType NodeId="ns=1;i=1022" BrowseName="1:Capability">
-        <DisplayName>Capability</DisplayName>
+    <UAObjectType NodeId="ns=1;i=1022" BrowseName="1:CapabilityType">
+        <DisplayName>CapabilityType</DisplayName>
         <Description>A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world.</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
@@ -3083,8 +3083,8 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1017</Reference>
         </References>
     </UAVariable>
-    <UAObjectType NodeId="ns=1;i=1020" BrowseName="1:Range">
-        <DisplayName Locale="En">Range</DisplayName>
+    <UAObjectType NodeId="ns=1;i=1020" BrowseName="1:RangeType">
+        <DisplayName Locale="En">RangeType</DisplayName>
         <Description Locale="En">A range data element is a data element that defines a range with min and max.</Description>
         <References>
             <Reference ReferenceType="HasProperty">ns=1;i=6106</Reference>
@@ -3096,17 +3096,17 @@
     <UAVariable ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6106" BrowseName="1:max" AccessLevel="3">
         <DisplayName>max</DisplayName>
         <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
         </References>
     </UAVariable>
     <UAVariable ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6105" BrowseName="1:min" AccessLevel="3">
         <DisplayName>min</DisplayName>
         <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
         </References>
     </UAVariable>
     <UAVariable DataType="PropertyValueType" ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6104" BrowseName="1:valueType" AccessLevel="3">
@@ -3198,8 +3198,8 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAVariable>
-    <UAObjectType NodeId="ns=1;i=1023" BrowseName="1:Entity">
-        <DisplayName>Entity</DisplayName>
+    <UAObjectType NodeId="ns=1;i=1023" BrowseName="1:EntityType">
+        <DisplayName>EntityType</DisplayName>
         <Description>An entity is a submodel element that is used to model entities.</Description>
         <References>
             <Reference ReferenceType="HasComponent">ns=1;i=5088</Reference>
@@ -3212,9 +3212,9 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>asset</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1023</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6110</Reference>
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1023</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="Key" ParentNodeId="ns=1;i=5088" ValueRank="1" NodeId="ns=1;i=6110" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
@@ -3228,9 +3228,9 @@ AAS or a reference to an external object or entity.</Description>
     <UAVariable DataType="EntityTypeEnumType" ParentNodeId="ns=1;i=1023" NodeId="ns=1;i=6109" BrowseName="1:entityType" AccessLevel="3">
         <DisplayName>entityType</DisplayName>
         <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1023</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1023</Reference>
         </References>
     </UAVariable>
     <UAObject ParentNodeId="ns=1;i=1023" NodeId="ns=1;i=5087" BrowseName="1:Stetements">
@@ -3245,10 +3245,10 @@ AAS or a reference to an external object or entity.</Description>
     <UAObject SymbolicName="statement" ParentNodeId="ns=1;i=5087" NodeId="ns=1;i=5089" BrowseName="1:&lt;statement>">
         <DisplayName>&lt;statement></DisplayName>
         <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5087</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6111</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1010</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5087</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=5089" NodeId="ns=1;i=6111" BrowseName="1:idShort" AccessLevel="3">
@@ -3301,8 +3301,8 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAObjectType NodeId="ns=1;i=1021" BrowseName="1:AnnotatedRelationshipElement">
-        <DisplayName>AnnotatedRelationshipElement</DisplayName>
+    <UAObjectType NodeId="ns=1;i=1021" BrowseName="1:AnnotatedRelationshipElementType">
+        <DisplayName>AnnotatedRelationshipElementType</DisplayName>
         <Description>An annotated relationship element is a relationship element that can be annotated with additional data elements.</Description>
         <References>
             <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1019</Reference>
@@ -3313,18 +3313,18 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>Annotations</DisplayName>
         <References>
             <Reference ReferenceType="HasComponent">ns=1;i=5086</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1021</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1021</Reference>
         </References>
     </UAObject>
     <UAObject SymbolicName="annotation" ParentNodeId="ns=1;i=5085" NodeId="ns=1;i=5086" BrowseName="1:&lt;annotation>">
         <DisplayName>&lt;annotation></DisplayName>
         <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5085</Reference>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6107</Reference>
             <Reference ReferenceType="HasModellingRule">i=11508</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5085</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="Key" ParentNodeId="ns=1;i=5086" ValueRank="1" NodeId="ns=1;i=6107" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
@@ -3722,7 +3722,7 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
-            <uax:DateTime>2019-12-09T11:54:41Z</uax:DateTime>
+            <uax:DateTime>2020-10-21T07:37:46Z</uax:DateTime>
         </Value>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6098" BrowseName="NamespaceUri">
@@ -3742,7 +3742,7 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
-            <uax:String>1.7.0</uax:String>
+            <uax:String>2.1.0</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="IdType" ParentNodeId="ns=1;i=5076" ValueRank="1" NodeId="ns=1;i=6100" ArrayDimensions="0" BrowseName="StaticNodeIdTypes">
