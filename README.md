@@ -1,6 +1,6 @@
 CoreAAS
 =======
-This project is an implementation of the Platform Industrie 4.0 Asset Administration Shell (AAS) metamodel in OPC UA. It defines an open Information Model defining the main parts of the AAS metamodel.
+This project is an implementation of the Platform Industrie 4.0 Asset Administration Shell (AAS) metamodel in OPC UA. It defines an open Information Model defining the main parts of the AAS metamodel. This Information is based on the version 2.1 of the AAS metamodel.
 
 The project is still work in progress and all the main components already defined will be tracked in the table at the end of this document.
 
@@ -19,7 +19,7 @@ An implementation of CoreAAS is available [here](https://github.com/OPCUAUniCT/n
 
 ---
 
-The foundation of coreAAS is the AAS metamodel defined in [this](https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/2018-details-of-the-asset-administration-shell.html) document.
+The foundation of coreAAS is the AAS metamodel defined in [this](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html) document.
 
 ## AAS metamodel entities tracking
 The following table shows which AAS metamodel entities are already mapped in coreAAS metamodel.
@@ -41,14 +41,18 @@ Unstable (incomplete or bugged) :warning:
 | SubmodelElement  | :white_check_mark:  |
 | DataElement  | :white_check_mark:  |
 | Property  | :white_check_mark:  |
+| MultiLanguageProperty  | :x:  |
+| Range  | :white_check_mark:  |
 | File  | :white_check_mark:  |
 | Blob  | :x:  |
 | ReferenceElement  | :white_check_mark:  |
+| Capability  | :white_check_mark:  |
 | SubmodelElementCollection  | :white_check_mark:  |
 | RelationshipElement  | :white_check_mark:  |
 | Operation  | :x:  |
 | OperationVariable  | :x:  |
 | Event  | :x:  |
+| Entity  | :white_check_mark:  |
 | View  | :white_check_mark:  |
 | ConceptDictionary  | :white_check_mark:  |
 | ConceptDescription  | :white_check_mark:  |

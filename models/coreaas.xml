@@ -3,10 +3,16 @@
     <NamespaceUris>
         <Uri>http://dieei.unict.it/coreAAS/</Uri>
     </NamespaceUris>
+    <Models>
+        <Model ModelUri="http://dieei.unict.it/coreAAS/" PublicationDate="2020-10-21T07:37:46Z" Version="2.1.0">
+            <RequiredModel ModelUri="http://opcfoundation.org/UA/" PublicationDate="2020-04-14T00:00:00Z" Version="1.04.6"/>
+        </Model>
+    </Models>
     <Aliases>
         <Alias Alias="Boolean">i=1</Alias>
         <Alias Alias="UInt32">i=7</Alias>
         <Alias Alias="String">i=12</Alias>
+        <Alias Alias="DateTime">i=13</Alias>
         <Alias Alias="ByteString">i=15</Alias>
         <Alias Alias="LocalizedText">i=21</Alias>
         <Alias Alias="Enumeration">i=29</Alias>
@@ -18,24 +24,201 @@
         <Alias Alias="HasSubtype">i=45</Alias>
         <Alias Alias="HasProperty">i=46</Alias>
         <Alias Alias="HasComponent">i=47</Alias>
+        <Alias Alias="IdType">i=256</Alias>
+        <Alias Alias="NumericRange">i=291</Alias>
         <Alias Alias="EnumValueType">i=7594</Alias>
         <Alias Alias="IdentifierType">ns=1;i=3002</Alias>
-        <Alias Alias="Kind">ns=1;i=3003</Alias>
+        <Alias Alias="AssetKind">ns=1;i=3003</Alias>
         <Alias Alias="Identifier">ns=1;i=3004</Alias>
         <Alias Alias="KeyElements">ns=1;i=3005</Alias>
         <Alias Alias="KeyType">ns=1;i=3006</Alias>
         <Alias Alias="Key">ns=1;i=3007</Alias>
         <Alias Alias="PropertyCategory">ns=1;i=3008</Alias>
         <Alias Alias="PropertyValueType">ns=1;i=3009</Alias>
+        <Alias Alias="ModelingKind">ns=1;i=3010</Alias>
+        <Alias Alias="EntityTypeEnumType">ns=1;i=3011</Alias>
+        <Alias Alias="DataTypeIEC61360Type">ns=1;i=3012</Alias>
         <Alias Alias="HasConceptDescription">ns=1;i=4003</Alias>
         <Alias Alias="HasEmbeddedDataSpecification">ns=1;i=4004</Alias>
         <Alias Alias="IsCaseOf">ns=1;i=4006</Alias>
+        <Alias Alias="HasDataSpecification">ns=1;i=4012</Alias>
     </Aliases>
     <Extensions>
         <Extension>
-            <ua:ModelInfo Tool="UaModeler" Hash="iq143ueA5QZjoIsim4wb5g==" Version="1.6.2"/>
+            <ua:ModelInfo Tool="UaModeler" Hash="kxo+L7q9nTG6HhHY4ROuyg==" Version="1.6.4"/>
         </Extension>
     </Extensions>
+    <UADataType NodeId="ns=1;i=3003" BrowseName="1:AssetKind">
+        <DisplayName>AssetKind</DisplayName>
+        <Description>Allowed values for an HasKind entity</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6006</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+        </References>
+        <Definition Name="1:AssetKind">
+            <Field Name="Type" Value="0"/>
+            <Field Name="Instance" Value="1"/>
+        </Definition>
+    </UADataType>
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3003" ValueRank="1" NodeId="ns=1;i=6006" ArrayDimensions="2" BrowseName="EnumStrings">
+        <DisplayName>EnumStrings</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3003</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:ListOfLocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Type</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Instance</uax:Text>
+                </uax:LocalizedText>
+            </uax:ListOfLocalizedText>
+        </Value>
+    </UAVariable>
+    <UADataType NodeId="ns=1;i=3012" BrowseName="1:DataTypeIEC61360Type">
+        <DisplayName>DataTypeIEC61360Type</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6112</Reference>
+        </References>
+        <Definition Name="1:DataTypeIEC61360Type">
+            <Field Name="DATE" Value="0"/>
+            <Field Name="STRING" Value="1"/>
+            <Field Name="STRING_TRANSLATABLE" Value="2"/>
+            <Field Name="INTEGER_MEASURE" Value="3"/>
+            <Field Name="INTEGER_COUNT" Value="4"/>
+            <Field Name="INTEGER_CURRENCY" Value="5"/>
+            <Field Name="REAL_MEASURE" Value="6"/>
+            <Field Name="REAL_COUNT" Value="7"/>
+            <Field Name="REAL_CURRENCY" Value="8"/>
+            <Field Name="BOOLEAN" Value="9"/>
+            <Field Name="URL" Value="10"/>
+            <Field Name="RATIONAL" Value="11"/>
+            <Field Name="RATIONAL_MEASURE" Value="12"/>
+            <Field Name="TIME" Value="13"/>
+            <Field Name="TIMESTAMP" Value="14"/>
+        </Definition>
+    </UADataType>
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3012" ValueRank="1" NodeId="ns=1;i=6112" ArrayDimensions="15" BrowseName="EnumStrings">
+        <DisplayName>EnumStrings</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3012</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:ListOfLocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>DATE</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>STRING</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>STRING_TRANSLATABLE</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>INTEGER_MEASURE</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>INTEGER_COUNT</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>INTEGER_CURRENCY</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>REAL_MEASURE</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>REAL_COUNT</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>REAL_CURRENCY</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>BOOLEAN</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>URL</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>RATIONAL</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>RATIONAL_MEASURE</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>TIME</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>TIMESTAMP</uax:Text>
+                </uax:LocalizedText>
+            </uax:ListOfLocalizedText>
+        </Value>
+    </UAVariable>
+    <UADataType NodeId="ns=1;i=3011" BrowseName="1:EntityTypeEnumType">
+        <DisplayName>EntityTypeEnumType</DisplayName>
+        <Description>Enumeration for denoting whether an entity is a self-managed entity or a co-managed entity.</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6108</Reference>
+        </References>
+        <Definition Name="1:EntityTypeEnumType">
+            <Field Name="CoManagedEntity" Value="0">
+                <Description>For co-managed entities there is no separate AAS. Co-managed entities need to be part of a self-managed entity.</Description>
+            </Field>
+            <Field Name="SelfManagedEntity" Value="1">
+                <Description>Self-Managed Entities have their own AAS but can be part of the bill of material of a composite self-managed entity.</Description>
+            </Field>
+        </Definition>
+    </UADataType>
+    <UAVariable DataType="EnumValueType" ParentNodeId="ns=1;i=3011" ValueRank="1" NodeId="ns=1;i=6108" ArrayDimensions="2" BrowseName="EnumValues">
+        <DisplayName>EnumValues</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3011</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:ListOfExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>0</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>CoManagedEntity</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>For co-managed entities there is no separate AAS. Co-managed entities need to be part of a self-managed entity.</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+                <uax:ExtensionObject>
+                    <uax:TypeId>
+                        <uax:Identifier>i=7616</uax:Identifier>
+                    </uax:TypeId>
+                    <uax:Body>
+                        <uax:EnumValueType>
+                            <uax:Value>1</uax:Value>
+                            <uax:DisplayName>
+                                <uax:Text>SelfManagedEntity</uax:Text>
+                            </uax:DisplayName>
+                            <uax:Description>
+                                <uax:Text>Self-Managed Entities have their own AAS but can be part of the bill of material of a composite self-managed entity.</uax:Text>
+                            </uax:Description>
+                        </uax:EnumValueType>
+                    </uax:Body>
+                </uax:ExtensionObject>
+            </uax:ListOfExtensionObject>
+        </Value>
+    </UAVariable>
     <UADataType NodeId="ns=1;i=3002" BrowseName="1:IdentifierType">
         <DisplayName>IdentifierType</DisplayName>
         <Description>All the allowed id type for an identifier</Description>
@@ -45,7 +228,7 @@
         </References>
         <Definition Name="1:IdentifierType">
             <Field Name="IRDI" Value="0"/>
-            <Field Name="URI" Value="1"/>
+            <Field Name="IRI" Value="1"/>
             <Field Name="Custom" Value="2"/>
         </Definition>
     </UADataType>
@@ -62,7 +245,7 @@
                     <uax:Text>IRDI</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
-                    <uax:Text>URI</uax:Text>
+                    <uax:Text>IRI</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>Custom</uax:Text>
@@ -79,27 +262,33 @@
         </References>
         <Definition Name="1:KeyElements">
             <Field Name="GlobalReference" Value="0"/>
-            <Field Name="AccessPermissionRule" Value="1"/>
-            <Field Name="Blob" Value="2"/>
-            <Field Name="ConceptDictionary" Value="3"/>
-            <Field Name="DataElement" Value="4"/>
-            <Field Name="File" Value="5"/>
-            <Field Name="Event" Value="6"/>
-            <Field Name="Operation" Value="7"/>
-            <Field Name="OperationVariable" Value="8"/>
-            <Field Name="Property" Value="9"/>
-            <Field Name="ReferenceElement" Value="10"/>
-            <Field Name="RelationshipElement" Value="11"/>
-            <Field Name="SubmodelElement" Value="12"/>
-            <Field Name="SubmodelElementCollection" Value="13"/>
-            <Field Name="View" Value="14"/>
-            <Field Name="Asset" Value="15"/>
-            <Field Name="AssetAdministrationShell" Value="16"/>
-            <Field Name="ConceptDescription" Value="17"/>
-            <Field Name="Submodel" Value="18"/>
+            <Field Name="FragmentReference" Value="1"/>
+            <Field Name="AccessPermissionRule" Value="2"/>
+            <Field Name="AnnotatedRelationshipElement" Value="3"/>
+            <Field Name="Blob" Value="4"/>
+            <Field Name="Capability" Value="5"/>
+            <Field Name="ConceptDictionary" Value="6"/>
+            <Field Name="DataElement" Value="7"/>
+            <Field Name="Entity" Value="8"/>
+            <Field Name="Event" Value="9"/>
+            <Field Name="File" Value="10"/>
+            <Field Name="MultiLanguageProperty" Value="11"/>
+            <Field Name="Operation" Value="12"/>
+            <Field Name="OperationVariable" Value="13"/>
+            <Field Name="Property" Value="14"/>
+            <Field Name="Range" Value="15"/>
+            <Field Name="ReferenceElement" Value="16"/>
+            <Field Name="RelationshipElement" Value="17"/>
+            <Field Name="SubmodelElement" Value="18"/>
+            <Field Name="SubmodelElementCollection" Value="19"/>
+            <Field Name="View" Value="20"/>
+            <Field Name="Asset" Value="21"/>
+            <Field Name="AssetAdministrationShell" Value="22"/>
+            <Field Name="ConceptDescription" Value="23"/>
+            <Field Name="Submodel" Value="24"/>
         </Definition>
     </UADataType>
-    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3005" ValueRank="1" NodeId="ns=1;i=6009" ArrayDimensions="19" BrowseName="EnumStrings">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3005" ValueRank="1" NodeId="ns=1;i=6009" ArrayDimensions="25" BrowseName="EnumStrings">
         <DisplayName>EnumStrings</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3005</Reference>
@@ -112,10 +301,19 @@
                     <uax:Text>GlobalReference</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
+                    <uax:Text>FragmentReference</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
                     <uax:Text>AccessPermissionRule</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
+                    <uax:Text>AnnotatedRelationshipElement</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
                     <uax:Text>Blob</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Capability</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>ConceptDictionary</uax:Text>
@@ -124,10 +322,16 @@
                     <uax:Text>DataElement</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
-                    <uax:Text>File</uax:Text>
+                    <uax:Text>Entity</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>Event</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>File</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>MultiLanguageProperty</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>Operation</uax:Text>
@@ -137,6 +341,9 @@
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>Property</uax:Text>
+                </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>Range</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>ReferenceElement</uax:Text>
@@ -180,9 +387,10 @@
             <Field Name="IRDI" Value="1"/>
             <Field Name="URI" Value="2"/>
             <Field Name="Custom" Value="3"/>
+            <Field Name="FragmentId" Value="4"/>
         </Definition>
     </UADataType>
-    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3006" ValueRank="1" NodeId="ns=1;i=6010" ArrayDimensions="4" BrowseName="EnumStrings">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3006" ValueRank="1" NodeId="ns=1;i=6010" ArrayDimensions="5" BrowseName="EnumStrings">
         <DisplayName>EnumStrings</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3006</Reference>
@@ -203,32 +411,34 @@
                 <uax:LocalizedText>
                     <uax:Text>Custom</uax:Text>
                 </uax:LocalizedText>
+                <uax:LocalizedText>
+                    <uax:Text>FragmentId</uax:Text>
+                </uax:LocalizedText>
             </uax:ListOfLocalizedText>
         </Value>
     </UAVariable>
-    <UADataType NodeId="ns=1;i=3003" BrowseName="1:Kind">
-        <DisplayName>Kind</DisplayName>
-        <Description>Allowed values for an HasKind entity</Description>
+    <UADataType NodeId="ns=1;i=3010" BrowseName="1:ModelingKind">
+        <DisplayName>ModelingKind</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty">ns=1;i=6006</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6095</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
         </References>
-        <Definition Name="1:Kind">
-            <Field Name="Type" Value="0"/>
+        <Definition Name="1:ModelingKind">
+            <Field Name="Template" Value="0"/>
             <Field Name="Instance" Value="1"/>
         </Definition>
     </UADataType>
-    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3003" ValueRank="1" NodeId="ns=1;i=6006" ArrayDimensions="2" BrowseName="EnumStrings">
+    <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=3010" ValueRank="1" NodeId="ns=1;i=6095" ArrayDimensions="2" BrowseName="EnumStrings">
         <DisplayName>EnumStrings</DisplayName>
         <References>
-            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3003</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=3010</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
         <Value>
             <uax:ListOfLocalizedText>
                 <uax:LocalizedText>
-                    <uax:Text>Type</uax:Text>
+                    <uax:Text>Template</uax:Text>
                 </uax:LocalizedText>
                 <uax:LocalizedText>
                     <uax:Text>Instance</uax:Text>
@@ -1376,106 +1586,140 @@
         mFtZT0ib3BjOkJvb2xlYW4iIE5hbWU9ImxvY2FsIi8+CiAgPG9wYzpGaWVsZCBUeXBlTmFtZ
         T0idG5zOktleUVsZW1lbnRzIiBOYW1lPSJ0eXBlIi8+CiAgPG9wYzpGaWVsZCBUeXBlTmFtZ
         T0ib3BjOkNoYXJBcnJheSIgTmFtZT0idmFsdWUiLz4KIDwvb3BjOlN0cnVjdHVyZWRUeXBlP
-        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJJZGVudGlma
-        WVyVHlwZSI+CiAgPG9wYzpEb2N1bWVudGF0aW9uPkFsbCB0aGUgYWxsb3dlZCBpZCB0eXBlI
-        GZvciBhbiBpZGVudGlmaWVyPC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0Z
-        WRWYWx1ZSBOYW1lPSJJUkRJIiBWYWx1ZT0iMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlI
-        E5hbWU9IlVSSSIgVmFsdWU9IjEiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDd
-        XN0b20iIFZhbHVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyY
-        XRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iS2V5RWxlbWVudHMiPgogIDxvcGM6R
-        G9jdW1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiBvZiBhbGwgdGhlIG5hbWVzIG9mIGVudGl0a
-        WVzIGEgS2V5IGNhbiByZWZlciB0bzwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iR2xvYmFsUmVmZXJlbmNlIiBWYWx1ZT0iMCIvPgogIDxvcGM6R
-        W51bWVyYXRlZFZhbHVlIE5hbWU9IkFjY2Vzc1Blcm1pc3Npb25SdWxlIiBWYWx1ZT0iMSIvP
-        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkJsb2IiIFZhbHVlPSIyIi8+CiAgPG9wY
-        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ29uY2VwdERpY3Rpb25hcnkiIFZhbHVlPSIzIi8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRGF0YUVsZW1lbnQiIFZhbHVlPSI0Ii8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRmlsZSIgVmFsdWU9IjUiLz4KICA8b3BjO
-        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJFdmVudCIgVmFsdWU9IjYiLz4KICA8b3BjOkVudW1lc
-        mF0ZWRWYWx1ZSBOYW1lPSJPcGVyYXRpb24iIFZhbHVlPSI3Ii8+CiAgPG9wYzpFbnVtZXJhd
-        GVkVmFsdWUgTmFtZT0iT3BlcmF0aW9uVmFyaWFibGUiIFZhbHVlPSI4Ii8+CiAgPG9wYzpFb
-        nVtZXJhdGVkVmFsdWUgTmFtZT0iUHJvcGVydHkiIFZhbHVlPSI5Ii8+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iUmVmZXJlbmNlRWxlbWVudCIgVmFsdWU9IjEwIi8+CiAgPG9wY
-        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iUmVsYXRpb25zaGlwRWxlbWVudCIgVmFsdWU9IjExI
-        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU3VibW9kZWxFbGVtZW50IiBWYWx1Z
-        T0iMTIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJTdWJtb2RlbEVsZW1lbnRDb
-        2xsZWN0aW9uIiBWYWx1ZT0iMTMiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJWa
-        WV3IiBWYWx1ZT0iMTQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJBc3NldCIgV
-        mFsdWU9IjE1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQXNzZXRBZG1pbmlzd
-        HJhdGlvblNoZWxsIiBWYWx1ZT0iMTYiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
-        SJDb25jZXB0RGVzY3JpcHRpb24iIFZhbHVlPSIxNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhb
-        HVlIE5hbWU9IlN1Ym1vZGVsIiBWYWx1ZT0iMTgiLz4KIDwvb3BjOkVudW1lcmF0ZWRUeXBlP
-        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJLZXlUeXBlI
-        j4KICA8b3BjOkRvY3VtZW50YXRpb24+VGhlIGtpbmQgb2YgaWRlbnRpZmllcnMgY29udGFpb
-        mVkIGluIGEgS2V5PC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
-        SBOYW1lPSJpZFNob3J0IiBWYWx1ZT0iMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
-        WU9IklSREkiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVVJJI
-        iBWYWx1ZT0iMiIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkN1c3RvbSIgVmFsd
-        WU9IjMiLz4KIDwvb3BjOkVudW1lcmF0ZWRUeXBlPgogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZ
-        W5ndGhJbkJpdHM9IjMyIiBOYW1lPSJLaW5kIj4KICA8b3BjOkRvY3VtZW50YXRpb24+QWxsb
-        3dlZCB2YWx1ZXMgZm9yIGFuIEhhc0tpbmQgZW50aXR5PC9vcGM6RG9jdW1lbnRhdGlvbj4KI
-        CA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJUeXBlIiBWYWx1ZT0iMCIvPgogIDxvcGM6R
-        W51bWVyYXRlZFZhbHVlIE5hbWU9Ikluc3RhbmNlIiBWYWx1ZT0iMSIvPgogPC9vcGM6RW51b
-        WVyYXRlZFR5cGU+CiA8b3BjOkVudW1lcmF0ZWRUeXBlIExlbmd0aEluQml0cz0iMzIiIE5hb
-        WU9IlByb3BlcnR5Q2F0ZWdvcnkiPgogIDxvcGM6RG9jdW1lbnRhdGlvbj5BIGxpc3Qgb2Ygb
-        mFtZXMgZGVzY3JpYmluZyB0aGUgbmF0dXJlIG9mIGEgUHJvcGVydHkgb2YgdGhlIFN1Ym1vZ
-        GVsPC9vcGM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDT
-        05TVEFOVCIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJQQVJBT
-        UVURVIiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVkFSSUFCT
-        EUiIFZhbHVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZ
-        FR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iUHJvcGVydHlWYWx1ZVR5cGUiPgogIDxvc
-        GM6RG9jdW1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiB3aXRoIGFsbCB0aGUgWFNEIGRhdGEgd
-        HlwZTwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
-        W55VHlwZSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJBbGxDb
-        21wbGV4VHlwZXMiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
-        W55U2ltcGxlVHlwZSIgVmFsdWU9IjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
-        SJhbnlBdG9taWNUeXBlIiBWYWx1ZT0iMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
-        WU9ImFueVVSSSIgVmFsdWU9IjQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJCY
-        XNlNjRCaW5hcnkiIFZhbHVlPSI1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iY
-        m9vbGVhbiIgVmFsdWU9IjYiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJkYXRlI
-        iBWYWx1ZT0iNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lIiBWY
-        Wx1ZT0iOCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lU3RhbXAiI
-        FZhbHVlPSI5Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZGVjaW1hbCIgVmFsd
-        WU9IjEwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50ZWdlciIgVmFsdWU9I
-        jExIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibG9uZyIgVmFsdWU9IjEyIi8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50IiBWYWx1ZT0iMTMiLz4KICA8b3BjO
-        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJzaG9ydCIgVmFsdWU9IjE0Ii8+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iYnl0ZSIgVmFsdWU9IjE1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkV
-        mFsdWUgTmFtZT0ibm9uTmVnYXRpdmVJbnRlZ2VyIiBWYWx1ZT0iMTYiLz4KICA8b3BjOkVud
-        W1lcmF0ZWRWYWx1ZSBOYW1lPSJwb3NpdGl2ZUludGVnZXIiIFZhbHVlPSIxNyIvPgogIDxvc
-        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkTG9uZyIgVmFsdWU9IjE4Ii8+CiAgP
-        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0idW5zaWduZWRJbnQiIFZhbHVlPSIxOSIvPgogI
-        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkU2hvcnQiIFZhbHVlPSIyMCIvP
-        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkQnl0ZSIgVmFsdWU9IjIxI
-        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibm9uUG9zaXRpdmVJbnRlZ2VyIiBWY
-        Wx1ZT0iMjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJuZWdhdGl2ZUludGVnZ
-        XIiIFZhbHVlPSIyMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRvdWJsZSIgV
-        mFsdWU9IjI0Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZHVyYXRpb24iIFZhb
-        HVlPSIyNSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRheVRpbWVEdXJhdGlvb
-        iIgVmFsdWU9IjI2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ieWVhck1vbnRoR
-        HVyYXRpb24iIFZhbHVlPSIyNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImZsb
-        2F0IiBWYWx1ZT0iMjgiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnRGF5IiBWY
-        Wx1ZT0iMjkiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnTW9udGgiIFZhbHVlP
-        SIzMCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdNb250aERheSIgVmFsdWU9I
-        jMxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZ1llYXIiIFZhbHVlPSIzMiIvP
-        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdZZWFyTW9udGgiIFZhbHVlPSIzMyIvP
-        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImhleEJpbmFyeSIgVmFsdWU9IjM0Ii8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk9UQVRJT04iIFZhbHVlPSIzNSIvPgogI
-        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlFOYW1lIiBWYWx1ZT0iMzYiLz4KICA8b3BjO
-        kVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJzdHJpbmciIFZhbHVlPSIzNyIvPgogIDxvcGM6RW51b
-        WVyYXRlZFZhbHVlIE5hbWU9Im5vcm1hbGl6ZWRTdHJpbmciIFZhbHVlPSIzOCIvPgogIDxvc
-        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InRva2VuIiBWYWx1ZT0iMzkiLz4KICA8b3BjOkVud
-        W1lcmF0ZWRWYWx1ZSBOYW1lPSJsYW5ndWFnZSIgVmFsdWU9IjQwIi8+CiAgPG9wYzpFbnVtZ
-        XJhdGVkVmFsdWUgTmFtZT0iTmFtZSIgVmFsdWU9IjQxIi8+CiAgPG9wYzpFbnVtZXJhdGVkV
-        mFsdWUgTmFtZT0iTkNOYW1lIiBWYWx1ZT0iNDIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
-        SBOYW1lPSJFTlRJVFkiIFZhbHVlPSI0MyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
-        WU9IklEIiBWYWx1ZT0iNDQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJRFJFR
-        iIgVmFsdWU9IjQ1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTiIgV
-        mFsdWU9IjQ2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0idGltZSIgVmFsdWU9I
-        jQ3Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRU5USVRJRVMiIFZhbHVlPSI0O
-        CIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IklEUkVGUyIgVmFsdWU9IjQ5Ii8+C
-        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTlMiIFZhbHVlPSI1MCIvPgogP
-        C9vcGM6RW51bWVyYXRlZFR5cGU+Cjwvb3BjOlR5cGVEaWN0aW9uYXJ5Pgo=</uax:ByteString>
+        gogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJBc3NldEtpb
+        mQiPgogIDxvcGM6RG9jdW1lbnRhdGlvbj5BbGxvd2VkIHZhbHVlcyBmb3IgYW4gSGFzS2luZ
+        CBlbnRpdHk8L29wYzpEb2N1bWVudGF0aW9uPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9IlR5cGUiIFZhbHVlPSIwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSW5zd
+        GFuY2UiIFZhbHVlPSIxIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyY
+        XRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iRGF0YVR5cGVJRUM2MTM2MFR5cGUiP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkRBVEUiIFZhbHVlPSIwIi8+CiAgPG9wY
+        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU1RSSU5HIiBWYWx1ZT0iMSIvPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9IlNUUklOR19UUkFOU0xBVEFCTEUiIFZhbHVlPSIyIi8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSU5URUdFUl9NRUFTVVJFIiBWYWx1ZT0iMyIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IklOVEVHRVJfQ09VTlQiIFZhbHVlPSI0I
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSU5URUdFUl9DVVJSRU5DWSIgVmFsd
+        WU9IjUiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJSRUFMX01FQVNVUkUiIFZhb
+        HVlPSI2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iUkVBTF9DT1VOVCIgVmFsd
+        WU9IjciLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJSRUFMX0NVUlJFTkNZIiBWY
+        Wx1ZT0iOCIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkJPT0xFQU4iIFZhbHVlP
+        SI5Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVVJMIiBWYWx1ZT0iMTAiLz4KI
+        CA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJSQVRJT05BTCIgVmFsdWU9IjExIi8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iUkFUSU9OQUxfTUVBU1VSRSIgVmFsdWU9IjEyI
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVElNRSIgVmFsdWU9IjEzIi8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVElNRVNUQU1QIiBWYWx1ZT0iMTQiLz4KIDwvb
+        3BjOkVudW1lcmF0ZWRUeXBlPgogPG9wYzpFbnVtZXJhdGVkVHlwZSBMZW5ndGhJbkJpdHM9I
+        jMyIiBOYW1lPSJFbnRpdHlUeXBlRW51bVR5cGUiPgogIDxvcGM6RG9jdW1lbnRhdGlvbj5Fb
+        nVtZXJhdGlvbiBmb3IgZGVub3Rpbmcgd2hldGhlciBhbiBlbnRpdHkgaXMgYSBzZWxmLW1hb
+        mFnZWQgZW50aXR5IG9yIGEgY28tbWFuYWdlZCBlbnRpdHkuPC9vcGM6RG9jdW1lbnRhdGlvb
+        j4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDb01hbmFnZWRFbnRpdHkiIFZhbHVlP
+        SIwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU2VsZk1hbmFnZWRFbnRpdHkiI
+        FZhbHVlPSIxIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZFR5c
+        GUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iSWRlbnRpZmllclR5cGUiPgogIDxvcGM6RG9jd
+        W1lbnRhdGlvbj5BbGwgdGhlIGFsbG93ZWQgaWQgdHlwZSBmb3IgYW4gaWRlbnRpZmllcjwvb
+        3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iSVJESSIgV
+        mFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJUkkiIFZhbHVlPSIxI
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ3VzdG9tIiBWYWx1ZT0iMiIvPgogP
+        C9vcGM6RW51bWVyYXRlZFR5cGU+CiA8b3BjOkVudW1lcmF0ZWRUeXBlIExlbmd0aEluQml0c
+        z0iMzIiIE5hbWU9IktleUVsZW1lbnRzIj4KICA8b3BjOkRvY3VtZW50YXRpb24+QW4gZW51b
+        WVyYXRpb24gb2YgYWxsIHRoZSBuYW1lcyBvZiBlbnRpdGllcyBhIEtleSBjYW4gcmVmZXIgd
+        G88L29wYzpEb2N1bWVudGF0aW9uPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9Ikdsb
+        2JhbFJlZmVyZW5jZSIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
+        SJGcmFnbWVudFJlZmVyZW5jZSIgVmFsdWU9IjEiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1Z
+        SBOYW1lPSJBY2Nlc3NQZXJtaXNzaW9uUnVsZSIgVmFsdWU9IjIiLz4KICA8b3BjOkVudW1lc
+        mF0ZWRWYWx1ZSBOYW1lPSJBbm5vdGF0ZWRSZWxhdGlvbnNoaXBFbGVtZW50IiBWYWx1ZT0iM
+        yIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkJsb2IiIFZhbHVlPSI0Ii8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ2FwYWJpbGl0eSIgVmFsdWU9IjUiLz4KICA8b
+        3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDb25jZXB0RGljdGlvbmFyeSIgVmFsdWU9IjYiL
+        z4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJEYXRhRWxlbWVudCIgVmFsdWU9IjciL
+        z4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJFbnRpdHkiIFZhbHVlPSI4Ii8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRXZlbnQiIFZhbHVlPSI5Ii8+CiAgPG9wYzpFb
+        nVtZXJhdGVkVmFsdWUgTmFtZT0iRmlsZSIgVmFsdWU9IjEwIi8+CiAgPG9wYzpFbnVtZXJhd
+        GVkVmFsdWUgTmFtZT0iTXVsdGlMYW5ndWFnZVByb3BlcnR5IiBWYWx1ZT0iMTEiLz4KICA8b
+        3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJPcGVyYXRpb24iIFZhbHVlPSIxMiIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9Ik9wZXJhdGlvblZhcmlhYmxlIiBWYWx1ZT0iMTMiL
+        z4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJQcm9wZXJ0eSIgVmFsdWU9IjE0Ii8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iUmFuZ2UiIFZhbHVlPSIxNSIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlJlZmVyZW5jZUVsZW1lbnQiIFZhbHVlPSIxNiIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlJlbGF0aW9uc2hpcEVsZW1lbnQiIFZhb
+        HVlPSIxNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IlN1Ym1vZGVsRWxlbWVud
+        CIgVmFsdWU9IjE4Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iU3VibW9kZWxFb
+        GVtZW50Q29sbGVjdGlvbiIgVmFsdWU9IjE5Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgT
+        mFtZT0iVmlldyIgVmFsdWU9IjIwIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iQ
+        XNzZXQiIFZhbHVlPSIyMSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IkFzc2V0Q
+        WRtaW5pc3RyYXRpb25TaGVsbCIgVmFsdWU9IjIyIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsd
+        WUgTmFtZT0iQ29uY2VwdERlc2NyaXB0aW9uIiBWYWx1ZT0iMjMiLz4KICA8b3BjOkVudW1lc
+        mF0ZWRWYWx1ZSBOYW1lPSJTdWJtb2RlbCIgVmFsdWU9IjI0Ii8+CiA8L29wYzpFbnVtZXJhd
+        GVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZFR5cGUgTGVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iS
+        2V5VHlwZSI+CiAgPG9wYzpEb2N1bWVudGF0aW9uPlRoZSBraW5kIG9mIGlkZW50aWZpZXJzI
+        GNvbnRhaW5lZCBpbiBhIEtleTwvb3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhd
+        GVkVmFsdWUgTmFtZT0iaWRTaG9ydCIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWY
+        Wx1ZSBOYW1lPSJJUkRJIiBWYWx1ZT0iMSIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hb
+        WU9IlVSSSIgVmFsdWU9IjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDdXN0b
+        20iIFZhbHVlPSIzIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRnJhZ21lbnRJZ
+        CIgVmFsdWU9IjQiLz4KIDwvb3BjOkVudW1lcmF0ZWRUeXBlPgogPG9wYzpFbnVtZXJhdGVkV
+        HlwZSBMZW5ndGhJbkJpdHM9IjMyIiBOYW1lPSJNb2RlbGluZ0tpbmQiPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9IlRlbXBsYXRlIiBWYWx1ZT0iMCIvPgogIDxvcGM6RW51bWVyY
+        XRlZFZhbHVlIE5hbWU9Ikluc3RhbmNlIiBWYWx1ZT0iMSIvPgogPC9vcGM6RW51bWVyYXRlZ
+        FR5cGU+CiA8b3BjOkVudW1lcmF0ZWRUeXBlIExlbmd0aEluQml0cz0iMzIiIE5hbWU9IlByb
+        3BlcnR5Q2F0ZWdvcnkiPgogIDxvcGM6RG9jdW1lbnRhdGlvbj5BIGxpc3Qgb2YgbmFtZXMgZ
+        GVzY3JpYmluZyB0aGUgbmF0dXJlIG9mIGEgUHJvcGVydHkgb2YgdGhlIFN1Ym1vZGVsPC9vc
+        GM6RG9jdW1lbnRhdGlvbj4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJDT05TVEFOV
+        CIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJQQVJBTUVURVIiI
+        FZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iVkFSSUFCTEUiIFZhb
+        HVlPSIyIi8+CiA8L29wYzpFbnVtZXJhdGVkVHlwZT4KIDxvcGM6RW51bWVyYXRlZFR5cGUgT
+        GVuZ3RoSW5CaXRzPSIzMiIgTmFtZT0iUHJvcGVydHlWYWx1ZVR5cGUiPgogIDxvcGM6RG9jd
+        W1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiB3aXRoIGFsbCB0aGUgWFNEIGRhdGEgdHlwZTwvb
+        3BjOkRvY3VtZW50YXRpb24+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iYW55VHlwZ
+        SIgVmFsdWU9IjAiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJBbGxDb21wbGV4V
+        HlwZXMiIFZhbHVlPSIxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iYW55U2ltc
+        GxlVHlwZSIgVmFsdWU9IjIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJhbnlBd
+        G9taWNUeXBlIiBWYWx1ZT0iMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImFue
+        VVSSSIgVmFsdWU9IjQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJCYXNlNjRCa
+        W5hcnkiIFZhbHVlPSI1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iYm9vbGVhb
+        iIgVmFsdWU9IjYiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJkYXRlIiBWYWx1Z
+        T0iNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lIiBWYWx1ZT0iO
+        CIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRhdGVUaW1lU3RhbXAiIFZhbHVlP
+        SI5Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZGVjaW1hbCIgVmFsdWU9IjEwI
+        i8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50ZWdlciIgVmFsdWU9IjExIi8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibG9uZyIgVmFsdWU9IjEyIi8+CiAgPG9wY
+        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iaW50IiBWYWx1ZT0iMTMiLz4KICA8b3BjOkVudW1lc
+        mF0ZWRWYWx1ZSBOYW1lPSJzaG9ydCIgVmFsdWU9IjE0Ii8+CiAgPG9wYzpFbnVtZXJhdGVkV
+        mFsdWUgTmFtZT0iYnl0ZSIgVmFsdWU9IjE1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgT
+        mFtZT0ibm9uTmVnYXRpdmVJbnRlZ2VyIiBWYWx1ZT0iMTYiLz4KICA8b3BjOkVudW1lcmF0Z
+        WRWYWx1ZSBOYW1lPSJwb3NpdGl2ZUludGVnZXIiIFZhbHVlPSIxNyIvPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkTG9uZyIgVmFsdWU9IjE4Ii8+CiAgPG9wYzpFb
+        nVtZXJhdGVkVmFsdWUgTmFtZT0idW5zaWduZWRJbnQiIFZhbHVlPSIxOSIvPgogIDxvcGM6R
+        W51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkU2hvcnQiIFZhbHVlPSIyMCIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9InVuc2lnbmVkQnl0ZSIgVmFsdWU9IjIxIi8+CiAgP
+        G9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ibm9uUG9zaXRpdmVJbnRlZ2VyIiBWYWx1ZT0iM
+        jIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJuZWdhdGl2ZUludGVnZXIiIFZhb
+        HVlPSIyMyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRvdWJsZSIgVmFsdWU9I
+        jI0Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZHVyYXRpb24iIFZhbHVlPSIyN
+        SIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImRheVRpbWVEdXJhdGlvbiIgVmFsd
+        WU9IjI2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0ieWVhck1vbnRoRHVyYXRpb
+        24iIFZhbHVlPSIyNyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImZsb2F0IiBWY
+        Wx1ZT0iMjgiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnRGF5IiBWYWx1ZT0iM
+        jkiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJnTW9udGgiIFZhbHVlPSIzMCIvP
+        gogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdNb250aERheSIgVmFsdWU9IjMxIi8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iZ1llYXIiIFZhbHVlPSIzMiIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImdZZWFyTW9udGgiIFZhbHVlPSIzMyIvPgogIDxvc
+        GM6RW51bWVyYXRlZFZhbHVlIE5hbWU9ImhleEJpbmFyeSIgVmFsdWU9IjM0Ii8+CiAgPG9wY
+        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk9UQVRJT04iIFZhbHVlPSIzNSIvPgogIDxvcGM6R
+        W51bWVyYXRlZFZhbHVlIE5hbWU9IlFOYW1lIiBWYWx1ZT0iMzYiLz4KICA8b3BjOkVudW1lc
+        mF0ZWRWYWx1ZSBOYW1lPSJzdHJpbmciIFZhbHVlPSIzNyIvPgogIDxvcGM6RW51bWVyYXRlZ
+        FZhbHVlIE5hbWU9Im5vcm1hbGl6ZWRTdHJpbmciIFZhbHVlPSIzOCIvPgogIDxvcGM6RW51b
+        WVyYXRlZFZhbHVlIE5hbWU9InRva2VuIiBWYWx1ZT0iMzkiLz4KICA8b3BjOkVudW1lcmF0Z
+        WRWYWx1ZSBOYW1lPSJsYW5ndWFnZSIgVmFsdWU9IjQwIi8+CiAgPG9wYzpFbnVtZXJhdGVkV
+        mFsdWUgTmFtZT0iTmFtZSIgVmFsdWU9IjQxIi8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgT
+        mFtZT0iTkNOYW1lIiBWYWx1ZT0iNDIiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lP
+        SJFTlRJVFkiIFZhbHVlPSI0MyIvPgogIDxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IklEI
+        iBWYWx1ZT0iNDQiLz4KICA8b3BjOkVudW1lcmF0ZWRWYWx1ZSBOYW1lPSJJRFJFRiIgVmFsd
+        WU9IjQ1Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTiIgVmFsdWU9I
+        jQ2Ii8+CiAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0idGltZSIgVmFsdWU9IjQ3Ii8+C
+        iAgPG9wYzpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iRU5USVRJRVMiIFZhbHVlPSI0OCIvPgogI
+        DxvcGM6RW51bWVyYXRlZFZhbHVlIE5hbWU9IklEUkVGUyIgVmFsdWU9IjQ5Ii8+CiAgPG9wY
+        zpFbnVtZXJhdGVkVmFsdWUgTmFtZT0iTk1UT0tFTlMiIFZhbHVlPSI1MCIvPgogPC9vcGM6R
+        W51bWVyYXRlZFR5cGU+Cjwvb3BjOlR5cGVEaWN0aW9uYXJ5Pgo=</uax:ByteString>
         </Value>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=6002" NodeId="ns=1;i=6003" BrowseName="NamespaceUri">
@@ -1505,70 +1749,123 @@
         29wY2ZvdW5kYXRpb24ub3JnL1VBLzIwMDgvMDIvVHlwZXMueHNkIiB4bWxuczp4cz0iaHR0c
         DovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPgogPHhzOmltcG9ydCBuYW1lc3BhY2U9I
         mh0dHA6Ly9vcGNmb3VuZGF0aW9uLm9yZy9VQS8yMDA4LzAyL1R5cGVzLnhzZCIvPgogPHhzO
-        nNpbXBsZVR5cGUgbmFtZT0iSWRlbnRpZmllclR5cGUiPgogIDx4czphbm5vdGF0aW9uPgogI
-        CA8eHM6ZG9jdW1lbnRhdGlvbj5BbGwgdGhlIGFsbG93ZWQgaWQgdHlwZSBmb3IgYW4gaWRlb
-        nRpZmllcjwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzOnJlc
-        3RyaWN0aW9uIGJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iS
-        VJESV8wIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVVJJXzEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJDdXN0b21fMiIvPgogIDwveHM6cmVzdHJpY3Rpb24+CiA8L3hzO
-        nNpbXBsZVR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6SWRlbnRpZmllclR5cGUiIG5hb
-        WU9IklkZW50aWZpZXJUeXBlIi8+CiA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mSWRlb
-        nRpZmllclR5cGUiPgogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzP
-        SIwIiBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0idG5zOklkZW50aWZpZXJUeXBlIiBuY
-        W1lPSJJZGVudGlmaWVyVHlwZSIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlP
-        gogPC94czpjb21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZJZGVud
-        GlmaWVyVHlwZSIgbmFtZT0iTGlzdE9mSWRlbnRpZmllclR5cGUiIG5pbGxhYmxlPSJ0cnVlI
-        i8+CiA8eHM6c2ltcGxlVHlwZSBuYW1lPSJLZXlFbGVtZW50cyI+CiAgPHhzOmFubm90YXRpb
-        24+CiAgIDx4czpkb2N1bWVudGF0aW9uPkFuIGVudW1lcmF0aW9uIG9mIGFsbCB0aGUgbmFtZ
-        XMgb2YgZW50aXRpZXMgYSBLZXkgY2FuIHJlZmVyIHRvPC94czpkb2N1bWVudGF0aW9uPgogI
-        DwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZT0ieHM6c3RyaW5nIj4KI
-        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJHbG9iYWxSZWZlcmVuY2VfMCIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IkFjY2Vzc1Blcm1pc3Npb25SdWxlXzEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJCbG9iXzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJDb
-        25jZXB0RGljdGlvbmFyeV8zIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iRGF0YUVsZ
-        W1lbnRfNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkZpbGVfNSIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IkV2ZW50XzYiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlP
-        SJPcGVyYXRpb25fNyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9Ik9wZXJhdGlvblZhc
-        mlhYmxlXzgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJQcm9wZXJ0eV85Ii8+CiAgI
-        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iUmVmZXJlbmNlRWxlbWVudF8xMCIvPgogICA8eHM6Z
-        W51bWVyYXRpb24gdmFsdWU9IlJlbGF0aW9uc2hpcEVsZW1lbnRfMTEiLz4KICAgPHhzOmVud
-        W1lcmF0aW9uIHZhbHVlPSJTdWJtb2RlbEVsZW1lbnRfMTIiLz4KICAgPHhzOmVudW1lcmF0a
-        W9uIHZhbHVlPSJTdWJtb2RlbEVsZW1lbnRDb2xsZWN0aW9uXzEzIi8+CiAgIDx4czplbnVtZ
-        XJhdGlvbiB2YWx1ZT0iVmlld18xNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkFzc
-        2V0XzE1Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQXNzZXRBZG1pbmlzdHJhdGlvb
-        lNoZWxsXzE2Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQ29uY2VwdERlc2NyaXB0a
-        W9uXzE3Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iU3VibW9kZWxfMTgiLz4KICA8L
-        3hzOnJlc3RyaWN0aW9uPgogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0id
-        G5zOktleUVsZW1lbnRzIiBuYW1lPSJLZXlFbGVtZW50cyIvPgogPHhzOmNvbXBsZXhUeXBlI
-        G5hbWU9Ikxpc3RPZktleUVsZW1lbnRzIj4KICA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZ
-        W50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuczpLZXlFb
-        GVtZW50cyIgbmFtZT0iS2V5RWxlbWVudHMiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZ
-        XF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzd
-        E9mS2V5RWxlbWVudHMiIG5hbWU9Ikxpc3RPZktleUVsZW1lbnRzIiBuaWxsYWJsZT0idHJ1Z
-        SIvPgogPHhzOnNpbXBsZVR5cGUgbmFtZT0iS2V5VHlwZSI+CiAgPHhzOmFubm90YXRpb24+C
-        iAgIDx4czpkb2N1bWVudGF0aW9uPlRoZSBraW5kIG9mIGlkZW50aWZpZXJzIGNvbnRhaW5lZ
-        CBpbiBhIEtleTwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90YXRpb24+CiAgPHhzO
-        nJlc3RyaWN0aW9uIGJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
-        T0iaWRTaG9ydF8wIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iSVJESV8xIi8+CiAgI
-        Dx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVVJJXzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
-        HVlPSJDdXN0b21fMyIvPgogIDwveHM6cmVzdHJpY3Rpb24+CiA8L3hzOnNpbXBsZVR5cGU+C
-        iA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6S2V5VHlwZSIgbmFtZT0iS2V5VHlwZSIvPgogPHhzO
-        mNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZktleVR5cGUiPgogIDx4czpzZXF1ZW5jZT4KICAgP
-        HhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRlZCIgdHlwZT0id
-        G5zOktleVR5cGUiIG5hbWU9IktleVR5cGUiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZ
-        XF1ZW5jZT4KIDwveHM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzd
-        E9mS2V5VHlwZSIgbmFtZT0iTGlzdE9mS2V5VHlwZSIgbmlsbGFibGU9InRydWUiLz4KIDx4c
-        zpzaW1wbGVUeXBlIG5hbWU9IktpbmQiPgogIDx4czphbm5vdGF0aW9uPgogICA8eHM6ZG9jd
-        W1lbnRhdGlvbj5BbGxvd2VkIHZhbHVlcyBmb3IgYW4gSGFzS2luZCBlbnRpdHk8L3hzOmRvY
-        3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0aW9uPgogIDx4czpyZXN0cmljdGlvbiBiYXNlP
-        SJ4czpzdHJpbmciPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlR5cGVfMCIvPgogICA8e
-        HM6ZW51bWVyYXRpb24gdmFsdWU9Ikluc3RhbmNlXzEiLz4KICA8L3hzOnJlc3RyaWN0aW9uP
-        gogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOktpbmQiIG5hbWU9I
-        ktpbmQiLz4KIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZLaW5kIj4KICA8eHM6c2Vxd
-        WVuY2U+CiAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZ
-        WQiIHR5cGU9InRuczpLaW5kIiBuYW1lPSJLaW5kIiBuaWxsYWJsZT0idHJ1ZSIvPgogIDwve
+        nNpbXBsZVR5cGUgbmFtZT0iQXNzZXRLaW5kIj4KICA8eHM6YW5ub3RhdGlvbj4KICAgPHhzO
+        mRvY3VtZW50YXRpb24+QWxsb3dlZCB2YWx1ZXMgZm9yIGFuIEhhc0tpbmQgZW50aXR5PC94c
+        zpkb2N1bWVudGF0aW9uPgogIDwveHM6YW5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gY
+        mFzZT0ieHM6c3RyaW5nIj4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJUeXBlXzAiLz4KI
+        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJJbnN0YW5jZV8xIi8+CiAgPC94czpyZXN0cmljd
+        Glvbj4KIDwveHM6c2ltcGxlVHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpBc3NldEtpb
+        mQiIG5hbWU9IkFzc2V0S2luZCIvPgogPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZkFzc
+        2V0S2luZCI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiI
+        G1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6QXNzZXRLaW5kIiBuYW1lPSJBc3Nld
+        EtpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tcGxle
+        FR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mQXNzZXRLaW5kIiBuYW1lPSJMa
+        XN0T2ZBc3NldEtpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c2ltcGxlVHlwZSBuYW1lP
+        SJEYXRhVHlwZUlFQzYxMzYwVHlwZSI+CiAgPHhzOnJlc3RyaWN0aW9uIGJhc2U9InhzOnN0c
+        mluZyI+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iREFURV8wIi8+CiAgIDx4czplbnVtZ
+        XJhdGlvbiB2YWx1ZT0iU1RSSU5HXzEiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJTV
+        FJJTkdfVFJBTlNMQVRBQkxFXzIiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJJTlRFR
+        0VSX01FQVNVUkVfMyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IklOVEVHRVJfQ09VT
+        lRfNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IklOVEVHRVJfQ1VSUkVOQ1lfNSIvP
+        gogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlJFQUxfTUVBU1VSRV82Ii8+CiAgIDx4czplb
+        nVtZXJhdGlvbiB2YWx1ZT0iUkVBTF9DT1VOVF83Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2Y
+        Wx1ZT0iUkVBTF9DVVJSRU5DWV84Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iQk9PT
+        EVBTl85Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iVVJMXzEwIi8+CiAgIDx4czplb
+        nVtZXJhdGlvbiB2YWx1ZT0iUkFUSU9OQUxfMTEiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhb
+        HVlPSJSQVRJT05BTF9NRUFTVVJFXzEyIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iV
+        ElNRV8xMyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlRJTUVTVEFNUF8xNCIvPgogI
+        DwveHM6cmVzdHJpY3Rpb24+CiA8L3hzOnNpbXBsZVR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlP
+        SJ0bnM6RGF0YVR5cGVJRUM2MTM2MFR5cGUiIG5hbWU9IkRhdGFUeXBlSUVDNjEzNjBUeXBlI
+        i8+CiA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mRGF0YVR5cGVJRUM2MTM2MFR5cGUiP
+        gogIDx4czpzZXF1ZW5jZT4KICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBtYXhPY2N1c
+        nM9InVuYm91bmRlZCIgdHlwZT0idG5zOkRhdGFUeXBlSUVDNjEzNjBUeXBlIiBuYW1lPSJEY
+        XRhVHlwZUlFQzYxMzYwVHlwZSIgbmlsbGFibGU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlP
+        gogPC94czpjb21wbGV4VHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpMaXN0T2ZEYXRhV
+        HlwZUlFQzYxMzYwVHlwZSIgbmFtZT0iTGlzdE9mRGF0YVR5cGVJRUM2MTM2MFR5cGUiIG5pb
+        GxhYmxlPSJ0cnVlIi8+CiA8eHM6c2ltcGxlVHlwZSBuYW1lPSJFbnRpdHlUeXBlRW51bVR5c
+        GUiPgogIDx4czphbm5vdGF0aW9uPgogICA8eHM6ZG9jdW1lbnRhdGlvbj5FbnVtZXJhdGlvb
+        iBmb3IgZGVub3Rpbmcgd2hldGhlciBhbiBlbnRpdHkgaXMgYSBzZWxmLW1hbmFnZWQgZW50a
+        XR5IG9yIGEgY28tbWFuYWdlZCBlbnRpdHkuPC94czpkb2N1bWVudGF0aW9uPgogIDwveHM6Y
+        W5ub3RhdGlvbj4KICA8eHM6cmVzdHJpY3Rpb24gYmFzZT0ieHM6c3RyaW5nIj4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJDb01hbmFnZWRFbnRpdHlfMCIvPgogICA8eHM6ZW51bWVyY
+        XRpb24gdmFsdWU9IlNlbGZNYW5hZ2VkRW50aXR5XzEiLz4KICA8L3hzOnJlc3RyaWN0aW9uP
+        gogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOkVudGl0eVR5cGVFb
+        nVtVHlwZSIgbmFtZT0iRW50aXR5VHlwZUVudW1UeXBlIi8+CiA8eHM6Y29tcGxleFR5cGUgb
+        mFtZT0iTGlzdE9mRW50aXR5VHlwZUVudW1UeXBlIj4KICA8eHM6c2VxdWVuY2U+CiAgIDx4c
+        zplbGVtZW50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuc
+        zpFbnRpdHlUeXBlRW51bVR5cGUiIG5hbWU9IkVudGl0eVR5cGVFbnVtVHlwZSIgbmlsbGFib
+        GU9InRydWUiLz4KICA8L3hzOnNlcXVlbmNlPgogPC94czpjb21wbGV4VHlwZT4KIDx4czplb
+        GVtZW50IHR5cGU9InRuczpMaXN0T2ZFbnRpdHlUeXBlRW51bVR5cGUiIG5hbWU9Ikxpc3RPZ
+        kVudGl0eVR5cGVFbnVtVHlwZSIgbmlsbGFibGU9InRydWUiLz4KIDx4czpzaW1wbGVUeXBlI
+        G5hbWU9IklkZW50aWZpZXJUeXBlIj4KICA8eHM6YW5ub3RhdGlvbj4KICAgPHhzOmRvY3VtZ
+        W50YXRpb24+QWxsIHRoZSBhbGxvd2VkIGlkIHR5cGUgZm9yIGFuIGlkZW50aWZpZXI8L3hzO
+        mRvY3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0aW9uPgogIDx4czpyZXN0cmljdGlvbiBiY
+        XNlPSJ4czpzdHJpbmciPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IklSRElfMCIvPgogI
+        CA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IklSSV8xIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2Y
+        Wx1ZT0iQ3VzdG9tXzIiLz4KICA8L3hzOnJlc3RyaWN0aW9uPgogPC94czpzaW1wbGVUeXBlP
+        gogPHhzOmVsZW1lbnQgdHlwZT0idG5zOklkZW50aWZpZXJUeXBlIiBuYW1lPSJJZGVudGlma
+        WVyVHlwZSIvPgogPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZklkZW50aWZpZXJUeXBlI
+        j4KICA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbWF4T2Njd
+        XJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuczpJZGVudGlmaWVyVHlwZSIgbmFtZT0iSWRlbnRpZ
+        mllclR5cGUiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwveHM6Y29tc
+        GxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mSWRlbnRpZmllclR5cGUiI
+        G5hbWU9Ikxpc3RPZklkZW50aWZpZXJUeXBlIiBuaWxsYWJsZT0idHJ1ZSIvPgogPHhzOnNpb
+        XBsZVR5cGUgbmFtZT0iS2V5RWxlbWVudHMiPgogIDx4czphbm5vdGF0aW9uPgogICA8eHM6Z
+        G9jdW1lbnRhdGlvbj5BbiBlbnVtZXJhdGlvbiBvZiBhbGwgdGhlIG5hbWVzIG9mIGVudGl0a
+        WVzIGEgS2V5IGNhbiByZWZlciB0bzwveHM6ZG9jdW1lbnRhdGlvbj4KICA8L3hzOmFubm90Y
+        XRpb24+CiAgPHhzOnJlc3RyaWN0aW9uIGJhc2U9InhzOnN0cmluZyI+CiAgIDx4czplbnVtZ
+        XJhdGlvbiB2YWx1ZT0iR2xvYmFsUmVmZXJlbmNlXzAiLz4KICAgPHhzOmVudW1lcmF0aW9uI
+        HZhbHVlPSJGcmFnbWVudFJlZmVyZW5jZV8xIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
+        T0iQWNjZXNzUGVybWlzc2lvblJ1bGVfMiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9I
+        kFubm90YXRlZFJlbGF0aW9uc2hpcEVsZW1lbnRfMyIvPgogICA8eHM6ZW51bWVyYXRpb24gd
+        mFsdWU9IkJsb2JfNCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkNhcGFiaWxpdHlfN
+        SIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkNvbmNlcHREaWN0aW9uYXJ5XzYiLz4KI
+        CAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJEYXRhRWxlbWVudF83Ii8+CiAgIDx4czplbnVtZ
+        XJhdGlvbiB2YWx1ZT0iRW50aXR5XzgiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJFd
+        mVudF85Ii8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1ZT0iRmlsZV8xMCIvPgogICA8eHM6Z
+        W51bWVyYXRpb24gdmFsdWU9Ik11bHRpTGFuZ3VhZ2VQcm9wZXJ0eV8xMSIvPgogICA8eHM6Z
+        W51bWVyYXRpb24gdmFsdWU9Ik9wZXJhdGlvbl8xMiIvPgogICA8eHM6ZW51bWVyYXRpb24gd
+        mFsdWU9Ik9wZXJhdGlvblZhcmlhYmxlXzEzIi8+CiAgIDx4czplbnVtZXJhdGlvbiB2YWx1Z
+        T0iUHJvcGVydHlfMTQiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJSYW5nZV8xNSIvP
+        gogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlJlZmVyZW5jZUVsZW1lbnRfMTYiLz4KICAgP
+        HhzOmVudW1lcmF0aW9uIHZhbHVlPSJSZWxhdGlvbnNoaXBFbGVtZW50XzE3Ii8+CiAgIDx4c
+        zplbnVtZXJhdGlvbiB2YWx1ZT0iU3VibW9kZWxFbGVtZW50XzE4Ii8+CiAgIDx4czplbnVtZ
+        XJhdGlvbiB2YWx1ZT0iU3VibW9kZWxFbGVtZW50Q29sbGVjdGlvbl8xOSIvPgogICA8eHM6Z
+        W51bWVyYXRpb24gdmFsdWU9IlZpZXdfMjAiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlP
+        SJBc3NldF8yMSIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkFzc2V0QWRtaW5pc3RyY
+        XRpb25TaGVsbF8yMiIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IkNvbmNlcHREZXNjc
+        mlwdGlvbl8yMyIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlN1Ym1vZGVsXzI0Ii8+C
+        iAgPC94czpyZXN0cmljdGlvbj4KIDwveHM6c2ltcGxlVHlwZT4KIDx4czplbGVtZW50IHR5c
+        GU9InRuczpLZXlFbGVtZW50cyIgbmFtZT0iS2V5RWxlbWVudHMiLz4KIDx4czpjb21wbGV4V
+        HlwZSBuYW1lPSJMaXN0T2ZLZXlFbGVtZW50cyI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6Z
+        WxlbWVudCBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6S
+        2V5RWxlbWVudHMiIG5hbWU9IktleUVsZW1lbnRzIiBuaWxsYWJsZT0idHJ1ZSIvPgogIDwve
         HM6c2VxdWVuY2U+CiA8L3hzOmNvbXBsZXhUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zO
-        kxpc3RPZktpbmQiIG5hbWU9Ikxpc3RPZktpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c
+        kxpc3RPZktleUVsZW1lbnRzIiBuYW1lPSJMaXN0T2ZLZXlFbGVtZW50cyIgbmlsbGFibGU9I
+        nRydWUiLz4KIDx4czpzaW1wbGVUeXBlIG5hbWU9IktleVR5cGUiPgogIDx4czphbm5vdGF0a
+        W9uPgogICA8eHM6ZG9jdW1lbnRhdGlvbj5UaGUga2luZCBvZiBpZGVudGlmaWVycyBjb250Y
+        WluZWQgaW4gYSBLZXk8L3hzOmRvY3VtZW50YXRpb24+CiAgPC94czphbm5vdGF0aW9uPgogI
+        Dx4czpyZXN0cmljdGlvbiBiYXNlPSJ4czpzdHJpbmciPgogICA8eHM6ZW51bWVyYXRpb24gd
+        mFsdWU9ImlkU2hvcnRfMCIvPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IklSRElfMSIvP
+        gogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlVSSV8yIi8+CiAgIDx4czplbnVtZXJhdGlvb
+        iB2YWx1ZT0iQ3VzdG9tXzMiLz4KICAgPHhzOmVudW1lcmF0aW9uIHZhbHVlPSJGcmFnbWVud
+        ElkXzQiLz4KICA8L3hzOnJlc3RyaWN0aW9uPgogPC94czpzaW1wbGVUeXBlPgogPHhzOmVsZ
+        W1lbnQgdHlwZT0idG5zOktleVR5cGUiIG5hbWU9IktleVR5cGUiLz4KIDx4czpjb21wbGV4V
+        HlwZSBuYW1lPSJMaXN0T2ZLZXlUeXBlIj4KICA8eHM6c2VxdWVuY2U+CiAgIDx4czplbGVtZ
+        W50IG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIHR5cGU9InRuczpLZXlUe
+        XBlIiBuYW1lPSJLZXlUeXBlIiBuaWxsYWJsZT0idHJ1ZSIvPgogIDwveHM6c2VxdWVuY2U+C
+        iA8L3hzOmNvbXBsZXhUeXBlPgogPHhzOmVsZW1lbnQgdHlwZT0idG5zOkxpc3RPZktleVR5c
+        GUiIG5hbWU9Ikxpc3RPZktleVR5cGUiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c2ltcGxlV
+        HlwZSBuYW1lPSJNb2RlbGluZ0tpbmQiPgogIDx4czpyZXN0cmljdGlvbiBiYXNlPSJ4czpzd
+        HJpbmciPgogICA8eHM6ZW51bWVyYXRpb24gdmFsdWU9IlRlbXBsYXRlXzAiLz4KICAgPHhzO
+        mVudW1lcmF0aW9uIHZhbHVlPSJJbnN0YW5jZV8xIi8+CiAgPC94czpyZXN0cmljdGlvbj4KI
+        DwveHM6c2ltcGxlVHlwZT4KIDx4czplbGVtZW50IHR5cGU9InRuczpNb2RlbGluZ0tpbmQiI
+        G5hbWU9Ik1vZGVsaW5nS2luZCIvPgogPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZk1vZ
+        GVsaW5nS2luZCI+CiAgPHhzOnNlcXVlbmNlPgogICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9I
+        jAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiB0eXBlPSJ0bnM6TW9kZWxpbmdLaW5kIiBuYW1lP
+        SJNb2RlbGluZ0tpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiAgPC94czpzZXF1ZW5jZT4KIDwve
+        HM6Y29tcGxleFR5cGU+CiA8eHM6ZWxlbWVudCB0eXBlPSJ0bnM6TGlzdE9mTW9kZWxpbmdLa
+        W5kIiBuYW1lPSJMaXN0T2ZNb2RlbGluZ0tpbmQiIG5pbGxhYmxlPSJ0cnVlIi8+CiA8eHM6c
         2ltcGxlVHlwZSBuYW1lPSJQcm9wZXJ0eUNhdGVnb3J5Ij4KICA8eHM6YW5ub3RhdGlvbj4KI
         CAgPHhzOmRvY3VtZW50YXRpb24+QSBsaXN0IG9mIG5hbWVzIGRlc2NyaWJpbmcgdGhlIG5hd
         HVyZSBvZiBhIFByb3BlcnR5IG9mIHRoZSBTdWJtb2RlbDwveHM6ZG9jdW1lbnRhdGlvbj4KI
@@ -1684,6 +1981,13 @@
         </References>
         <InverseName Locale="en">ConceptDescriptionOf</InverseName>
     </UAReferenceType>
+    <UAReferenceType NodeId="ns=1;i=4012" BrowseName="1:HasDataSpecification">
+        <DisplayName>HasDataSpecification</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=47</Reference>
+        </References>
+        <InverseName Locale="en">DataSpecificationOf</InverseName>
+    </UAReferenceType>
     <UAReferenceType NodeId="ns=1;i=4004" BrowseName="1:HasEmbeddedDataSpecification">
         <DisplayName>HasEmbeddedDataSpecification</DisplayName>
         <Description>Every Object with Data Specification references the DataSpecification by means of this ReferenceType</Description>
@@ -1772,6 +2076,7 @@
         <DisplayName>AASType</DisplayName>
         <Description>An ObjectType representing an AssetAdministrationShell</Description>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5077</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5041</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5007</Reference>
@@ -1784,6 +2089,14 @@
             <Reference ReferenceType="HasComponent">ns=1;i=5069</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5077" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1002" NodeId="ns=1;i=5041" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2006,12 +2319,21 @@
         <DisplayName>AdministrativeInformationType</DisplayName>
         <Description>An ObjectType containing administration information</Description>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5078</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5019</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6017</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6016</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1003" NodeId="ns=1;i=5078" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1003</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1003" NodeId="ns=1;i=5019" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2067,16 +2389,26 @@
         <DisplayName>AssetType</DisplayName>
         <Description>An ObjectType representing an Asset</Description>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5079</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5034</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5033</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5032</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5084</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6055</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6052</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6053</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6054</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5079" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1014</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5034" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2137,6 +2469,23 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=5084" BrowseName="1:billOfMaterial">
+        <DisplayName>billOfMaterial</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1014</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6103</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5084" ValueRank="1" NodeId="ns=1;i=6103" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5084</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=1014" ValueRank="1" NodeId="ns=1;i=6055" ArrayDimensions="0" BrowseName="1:description" AccessLevel="3">
         <DisplayName>description</DisplayName>
         <References>
@@ -2161,7 +2510,7 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="Kind" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=6054" BrowseName="1:kind" AccessLevel="3">
+    <UAVariable DataType="AssetKind" ParentNodeId="ns=1;i=1014" NodeId="ns=1;i=6054" BrowseName="1:kind" AccessLevel="3">
         <DisplayName>kind</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1014</Reference>
@@ -2174,6 +2523,7 @@
         <Description>An ObjectType for entities describin semantic for other elements</Description>
         <References>
             <Reference ReferenceType="IsCaseOf">ns=1;i=5013</Reference>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5080</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5014</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5012</Reference>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
@@ -2198,6 +2548,14 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=5080" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1008</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1008" NodeId="ns=1;i=5014" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2382,7 +2740,7 @@
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1003</Reference>
         </References>
     </UAObject>
-    <UAVariable DataType="String" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6065" BrowseName="1:dataType" AccessLevel="3">
+    <UAVariable DataType="DataTypeIEC61360Type" ParentNodeId="ns=1;i=1006" NodeId="ns=1;i=6065" BrowseName="1:dataType" AccessLevel="3">
         <DisplayName>dataType</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1006</Reference>
@@ -2419,7 +2777,7 @@
                 <uax:Body>
                     <Identifier xmlns="http://dieei.unict.it/coreAAS/Types.xsd">
                         <id>www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</id>
-                        <idType>URI_1</idType>
+                        <idType>IRI_1</idType>
                     </Identifier>
                 </uax:Body>
             </uax:ExtensionObject>
@@ -2560,6 +2918,7 @@
         <DisplayName>SubmodelElementType</DisplayName>
         <Description>An abstract class for all submodel element of a Submodel</Description>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5081</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5053</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6037</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6038</Reference>
@@ -2570,6 +2929,14 @@
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5081" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=5053" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2629,7 +2996,7 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="Kind" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=6039" BrowseName="1:kind" AccessLevel="3">
+    <UAVariable DataType="ModelingKind" ParentNodeId="ns=1;i=1010" NodeId="ns=1;i=6039" BrowseName="1:kind" AccessLevel="3">
         <DisplayName>kind</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1010</Reference>
@@ -2674,6 +3041,13 @@
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1022" BrowseName="1:CapabilityType">
+        <DisplayName>CapabilityType</DisplayName>
+        <Description>A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world.</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+        </References>
+    </UAObjectType>
     <UAObjectType IsAbstract="true" NodeId="ns=1;i=1011" BrowseName="1:DataElementType">
         <DisplayName>DataElementType</DisplayName>
         <Description>An abstract ObjectType for all submodel element that cannot contain further submodel elements</Description>
@@ -2707,6 +3081,40 @@
             <Reference ReferenceType="HasModellingRule">i=80</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1017</Reference>
+        </References>
+    </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1020" BrowseName="1:RangeType">
+        <DisplayName Locale="En">RangeType</DisplayName>
+        <Description Locale="En">A range data element is a data element that defines a range with min and max.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6106</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6105</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1011</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6104</Reference>
+        </References>
+    </UAObjectType>
+    <UAVariable ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6106" BrowseName="1:max" AccessLevel="3">
+        <DisplayName>max</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6105" BrowseName="1:min" AccessLevel="3">
+        <DisplayName>min</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="PropertyValueType" ParentNodeId="ns=1;i=1020" NodeId="ns=1;i=6104" BrowseName="1:valueType" AccessLevel="3">
+        <DisplayName>valueType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1020</Reference>
         </References>
     </UAVariable>
     <UAObjectType NodeId="ns=1;i=1016" BrowseName="1:ReferenceElementType">
@@ -2790,6 +3198,67 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1012</Reference>
         </References>
     </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1023" BrowseName="1:EntityType">
+        <DisplayName>EntityType</DisplayName>
+        <Description>An entity is a submodel element that is used to model entities.</Description>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5088</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1010</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6109</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5087</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject ParentNodeId="ns=1;i=1023" NodeId="ns=1;i=5088" BrowseName="1:asset">
+        <DisplayName>asset</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1023</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6110</Reference>
+            <Reference ReferenceType="HasModellingRule">i=80</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5088" ValueRank="1" NodeId="ns=1;i=6110" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5088</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="EntityTypeEnumType" ParentNodeId="ns=1;i=1023" NodeId="ns=1;i=6109" BrowseName="1:entityType" AccessLevel="3">
+        <DisplayName>entityType</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1023</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObject ParentNodeId="ns=1;i=1023" NodeId="ns=1;i=5087" BrowseName="1:Stetements">
+        <DisplayName>Stetements</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5089</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1023</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="statement" ParentNodeId="ns=1;i=5087" NodeId="ns=1;i=5089" BrowseName="1:&lt;statement>">
+        <DisplayName>&lt;statement></DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5087</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6111</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1010</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5089" NodeId="ns=1;i=6111" BrowseName="1:idShort" AccessLevel="3">
+        <DisplayName>idShort</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5089</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
     <UAObjectType NodeId="ns=1;i=1019" BrowseName="1:RelationshipElementType">
         <DisplayName>RelationshipElementType</DisplayName>
         <References>
@@ -2802,9 +3271,9 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>first</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1019</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6093</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
-            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1019</Reference>
         </References>
     </UAObject>
     <UAVariable DataType="Key" ParentNodeId="ns=1;i=5074" ValueRank="1" NodeId="ns=1;i=6093" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
@@ -2828,6 +3297,40 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>keys</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5075</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAObjectType NodeId="ns=1;i=1021" BrowseName="1:AnnotatedRelationshipElementType">
+        <DisplayName>AnnotatedRelationshipElementType</DisplayName>
+        <Description>An annotated relationship element is a relationship element that can be annotated with additional data elements.</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1019</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=5085</Reference>
+        </References>
+    </UAObjectType>
+    <UAObject ParentNodeId="ns=1;i=1021" NodeId="ns=1;i=5085" BrowseName="1:Annotations">
+        <DisplayName>Annotations</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=5086</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1021</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="annotation" ParentNodeId="ns=1;i=5085" NodeId="ns=1;i=5086" BrowseName="1:&lt;annotation>">
+        <DisplayName>&lt;annotation></DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5085</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6107</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Key" ParentNodeId="ns=1;i=5086" ValueRank="1" NodeId="ns=1;i=6107" ArrayDimensions="0" BrowseName="1:keys" AccessLevel="3">
+        <DisplayName>keys</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5086</Reference>
             <Reference ReferenceType="HasModellingRule">i=78</Reference>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
@@ -2896,6 +3399,7 @@ AAS or a reference to an external object or entity.</Description>
     <UAObjectType NodeId="ns=1;i=1013" BrowseName="1:SubmodelType">
         <DisplayName>SubmodelType</DisplayName>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5082</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5031</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5028</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6048</Reference>
@@ -2908,6 +3412,14 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5082" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1013</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=5031" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -2957,7 +3469,7 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
         </References>
     </UAVariable>
-    <UAVariable DataType="Kind" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=6049" BrowseName="1:kind" AccessLevel="3">
+    <UAVariable DataType="ModelingKind" ParentNodeId="ns=1;i=1013" NodeId="ns=1;i=6049" BrowseName="1:kind" AccessLevel="3">
         <DisplayName>kind</DisplayName>
         <References>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1013</Reference>
@@ -3029,6 +3541,7 @@ AAS or a reference to an external object or entity.</Description>
         <DisplayName>ViewType</DisplayName>
         <Description>A view is a collection of referable elements w.r.t. a specific viewpoint of one or more stakeholders.</Description>
         <References>
+            <Reference ReferenceType="HasDataSpecification">ns=1;i=5083</Reference>
             <Reference ReferenceType="HasEmbeddedDataSpecification">ns=1;i=5063</Reference>
             <Reference ReferenceType="HasComponent">ns=1;i=5068</Reference>
             <Reference ReferenceType="HasProperty">ns=1;i=6088</Reference>
@@ -3038,6 +3551,14 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
         </References>
     </UAObjectType>
+    <UAObject SymbolicName="DataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5083" BrowseName="1:&lt;DataSpecification>">
+        <DisplayName>&lt;DataSpecification></DisplayName>
+        <References>
+            <Reference ReferenceType="HasDataSpecification" IsForward="false">ns=1;i=1018</Reference>
+            <Reference ReferenceType="HasTypeDefinition">ns=1;i=1005</Reference>
+            <Reference ReferenceType="HasModellingRule">i=11508</Reference>
+        </References>
+    </UAObject>
     <UAObject SymbolicName="EmbeddedDataSpecification" ParentNodeId="ns=1;i=1018" NodeId="ns=1;i=5063" BrowseName="1:&lt;EmbeddedDataSpecification>">
         <DisplayName>&lt;EmbeddedDataSpecification></DisplayName>
         <References>
@@ -3170,6 +3691,81 @@ AAS or a reference to an external object or entity.</Description>
             <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
         </References>
     </UAObject>
+    <UAObject SymbolicName="http___dieei_unict_it_coreAAS_" NodeId="ns=1;i=5076" BrowseName="1:http://dieei.unict.it/coreAAS/">
+        <DisplayName>http://dieei.unict.it/coreAAS/</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6096</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=11616</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">i=11715</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6097</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6098</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6099</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6100</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6101</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6102</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6096" BrowseName="IsNamespaceSubset">
+        <DisplayName>IsNamespaceSubset</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:Boolean>false</uax:Boolean>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="DateTime" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6097" BrowseName="NamespacePublicationDate">
+        <DisplayName>NamespacePublicationDate</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:DateTime>2020-10-21T07:37:46Z</uax:DateTime>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6098" BrowseName="NamespaceUri">
+        <DisplayName>NamespaceUri</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:String>http://dieei.unict.it/coreAAS/</uax:String>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6099" BrowseName="NamespaceVersion">
+        <DisplayName>NamespaceVersion</DisplayName>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:String>2.1.0</uax:String>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="IdType" ParentNodeId="ns=1;i=5076" ValueRank="1" NodeId="ns=1;i=6100" ArrayDimensions="0" BrowseName="StaticNodeIdTypes">
+        <DisplayName>StaticNodeIdTypes</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="NumericRange" ParentNodeId="ns=1;i=5076" ValueRank="1" NodeId="ns=1;i=6101" ArrayDimensions="0" BrowseName="StaticNumericNodeIdRange">
+        <DisplayName>StaticNumericNodeIdRange</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5076" NodeId="ns=1;i=6102" BrowseName="StaticStringNodeIdPattern">
+        <DisplayName>StaticStringNodeIdPattern</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5076</Reference>
+        </References>
+    </UAVariable>
     <UAObject NodeId="ns=1;i=5047" BrowseName="1:Submodels">
         <DisplayName>Submodels</DisplayName>
         <References>
